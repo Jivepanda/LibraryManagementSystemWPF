@@ -1,0 +1,500 @@
+[
+    {
+        "MemberId": 1,
+        "FirstName": "Alice",
+        "LastName": "Martin",
+        "Role": "Member",
+        "Email": "alice.martin@example.com",
+        "Phone": "0400 000 001",
+        "IsActive": true
+    },
+    {
+        "MemberId": 2,
+        "FirstName": "Ben",
+        "LastName": "Taylor",
+        "Role": "Member",
+        "Email": "ben.taylor@example.com",
+        "Phone": "0400 000 002",
+        "IsActive": true
+    },
+    {
+        "MemberId": 3,
+        "FirstName": "Chloe",
+        "LastName": "Wilson",
+        "Role": "Member",
+        "Email": "chloe.wilson@example.com",
+        "Phone": "0400 000 003",
+        "IsActive": true
+    },
+    {
+        "MemberId": 4,
+        "FirstName": "Daniel",
+        "LastName": "Nguyen",
+        "Role": "Member",
+        "Email": "daniel.nguyen@example.com",
+        "Phone": "0400 000 004",
+        "IsActive": true
+    },
+    {
+        "MemberId": 5,
+        "FirstName": "Ella",
+        "LastName": "Brown",
+        "Role": "Member",
+        "Email": "ella.brown@example.com",
+        "Phone": "0400 000 005",
+        "IsActive": true
+    },
+    {
+        "MemberId": 6,
+        "FirstName": "Finn",
+        "LastName": "Anderson",
+        "Role": "Member",
+        "Email": "finn.anderson@example.com",
+        "Phone": "0400 000 006",
+        "IsActive": true
+    },
+    {
+        "MemberId": 7,
+        "FirstName": "Grace",
+        "LastName": "Edwards",
+        "Role": "Member",
+        "Email": "grace.edwards@example.com",
+        "Phone": "0400 000 007",
+        "IsActive": true
+    },
+    {
+        "MemberId": 8,
+        "FirstName": "Henry",
+        "LastName": "Stewart",
+        "Role": "Member",
+        "Email": "henry.stewart@example.com",
+        "Phone": "0400 000 008",
+        "IsActive": true
+    },
+    {
+        "MemberId": 9,
+        "FirstName": "Isla",
+        "LastName": "Baker",
+        "Role": "Member",
+        "Email": "isla.baker@example.com",
+        "Phone": "0400 000 009",
+        "IsActive": true
+    },
+    {
+        "MemberId": 10,
+        "FirstName": "Jack",
+        "LastName": "Harris",
+        "Role": "Member",
+        "Email": "jack.harris@example.com",
+        "Phone": "0400 000 010",
+        "IsActive": true
+    },
+    {
+        "MemberId": 11,
+        "FirstName": "Katie",
+        "LastName": "Wright",
+        "Role": "Member",
+        "Email": "katie.wright@example.com",
+        "Phone": "0400 000 011",
+        "IsActive": true
+    },
+    {
+        "MemberId": 12,
+        "FirstName": "Liam",
+        "LastName": "Murphy",
+        "Role": "Member",
+        "Email": "liam.murphy@example.com",
+        "Phone": "0400 000 012",
+        "IsActive": true
+    },
+    {
+        "MemberId": 13,
+        "FirstName": "Mia",
+        "LastName": "Kelly",
+        "Role": "Member",
+        "Email": "mia.kelly@example.com",
+        "Phone": "0400 000 013",
+        "IsActive": true
+    },
+    {
+        "MemberId": 14,
+        "FirstName": "Noah",
+        "LastName": "Parker",
+        "Role": "Member",
+        "Email": "noah.parker@example.com",
+        "Phone": "0400 000 014",
+        "IsActive": true
+    },
+    {
+        "MemberId": 15,
+        "FirstName": "Olivia",
+        "LastName": "Coleman",
+        "Role": "Member",
+        "Email": "olivia.coleman@example.com",
+        "Phone": "0400 000 015",
+        "IsActive": true
+    },
+    {
+        "MemberId": 16,
+        "FirstName": "Patrick",
+        "LastName": "Foster",
+        "Role": "Member",
+        "Email": "patrick.foster@example.com",
+        "Phone": "0400 000 016",
+        "IsActive": true
+    },
+    {
+        "MemberId": 17,
+        "FirstName": "Quinn",
+        "LastName": "Reed",
+        "Role": "Member",
+        "Email": "quinn.reed@example.com",
+        "Phone": "0400 000 017",
+        "IsActive": true
+    },
+    {
+        "MemberId": 18,
+        "FirstName": "Ruby",
+        "LastName": "Campbell",
+        "Role": "Member",
+        "Email": "ruby.campbell@example.com",
+        "Phone": "0400 000 018",
+        "IsActive": true
+    },
+    {
+        "MemberId": 19,
+        "FirstName": "Samuel",
+        "LastName": "Mitchell",
+        "Role": "Member",
+        "Email": "samuel.mitchell@example.com",
+        "Phone": "0400 000 019",
+        "IsActive": true
+    },
+    {
+        "MemberId": 20,
+        "FirstName": "Tara",
+        "LastName": "Phillips",
+        "Role": "Member",
+        "Email": "tara.phillips@example.com",
+        "Phone": "0400 000 020",
+        "IsActive": true
+    },
+    {
+        "MemberId": 21,
+        "FirstName": "Uma",
+        "LastName": "Richardson",
+        "Role": "Member",
+        "Email": "uma.richardson@example.com",
+        "Phone": "0400 000 021",
+        "IsActive": true
+    },
+    {
+        "MemberId": 22,
+        "FirstName": "Victor",
+        "LastName": "Hughes",
+        "Role": "Member",
+        "Email": "victor.hughes@example.com",
+        "Phone": "0400 000 022",
+        "IsActive": true
+    },
+    {
+        "MemberId": 23,
+        "FirstName": "Wendy",
+        "LastName": "Price",
+        "Role": "Member",
+        "Email": "wendy.price@example.com",
+        "Phone": "0400 000 023",
+        "IsActive": true
+    },
+    {
+        "MemberId": 24,
+        "FirstName": "Xavier",
+        "LastName": "Barnes",
+        "Role": "Member",
+        "Email": "xavier.barnes@example.com",
+        "Phone": "0400 000 024",
+        "IsActive": true
+    },
+    {
+        "MemberId": 25,
+        "FirstName": "Yasmin",
+        "LastName": "Webb",
+        "Role": "Member",
+        "Email": "yasmin.webb@example.com",
+        "Phone": "0400 000 025",
+        "IsActive": true
+    },
+    {
+        "MemberId": 26,
+        "FirstName": "Zach",
+        "LastName": "Robertson",
+        "Role": "Member",
+        "Email": "zach.robertson@example.com",
+        "Phone": "0400 000 026",
+        "IsActive": true
+    },
+    {
+        "MemberId": 27,
+        "FirstName": "Amelia",
+        "LastName": "Hunt",
+        "Role": "Member",
+        "Email": "amelia.hunt@example.com",
+        "Phone": "0400 000 027",
+        "IsActive": true
+    },
+    {
+        "MemberId": 28,
+        "FirstName": "Blake",
+        "LastName": "Matthews",
+        "Role": "Member",
+        "Email": "blake.matthews@example.com",
+        "Phone": "0400 000 028",
+        "IsActive": true
+    },
+    {
+        "MemberId": 29,
+        "FirstName": "Courtney",
+        "LastName": "Spencer",
+        "Role": "Member",
+        "Email": "courtney.spencer@example.com",
+        "Phone": "0400 000 029",
+        "IsActive": true
+    },
+    {
+        "MemberId": 30,
+        "FirstName": "Dylan",
+        "LastName": "Payne",
+        "Role": "Member",
+        "Email": "dylan.payne@example.com",
+        "Phone": "0400 000 030",
+        "IsActive": true
+    },
+    {
+        "MemberId": 31,
+        "FirstName": "Erin",
+        "LastName": "Nichols",
+        "Role": "Member",
+        "Email": "erin.nichols@example.com",
+        "Phone": "0400 000 031",
+        "IsActive": true
+    },
+    {
+        "MemberId": 32,
+        "FirstName": "Fraser",
+        "LastName": "Johnston",
+        "Role": "Member",
+        "Email": "fraser.johnston@example.com",
+        "Phone": "0400 000 032",
+        "IsActive": true
+    },
+    {
+        "MemberId": 33,
+        "FirstName": "Georgia",
+        "LastName": "Holmes",
+        "Role": "Member",
+        "Email": "georgia.holmes@example.com",
+        "Phone": "0400 000 033",
+        "IsActive": true
+    },
+    {
+        "MemberId": 34,
+        "FirstName": "Harvey",
+        "LastName": "Francis",
+        "Role": "Member",
+        "Email": "harvey.francis@example.com",
+        "Phone": "0400 000 034",
+        "IsActive": true
+    },
+    {
+        "MemberId": 35,
+        "FirstName": "Imogen",
+        "LastName": "Booth",
+        "Role": "Member",
+        "Email": "imogen.booth@example.com",
+        "Phone": "0400 000 035",
+        "IsActive": true
+    },
+    {
+        "MemberId": 36,
+        "FirstName": "Josh",
+        "LastName": "Harper",
+        "Role": "Member",
+        "Email": "josh.harper@example.com",
+        "Phone": "0400 000 036",
+        "IsActive": true
+    },
+    {
+        "MemberId": 37,
+        "FirstName": "Keira",
+        "LastName": "Curtis",
+        "Role": "Member",
+        "Email": "keira.curtis@example.com",
+        "Phone": "0400 000 037",
+        "IsActive": true
+    },
+    {
+        "MemberId": 38,
+        "FirstName": "Logan",
+        "LastName": "Hayes",
+        "Role": "Member",
+        "Email": "logan.hayes@example.com",
+        "Phone": "0400 000 038",
+        "IsActive": true
+    },
+    {
+        "MemberId": 39,
+        "FirstName": "Maddie",
+        "LastName": "Burns",
+        "Role": "Member",
+        "Email": "maddie.burns@example.com",
+        "Phone": "0400 000 039",
+        "IsActive": true
+    },
+    {
+        "MemberId": 40,
+        "FirstName": "Noel",
+        "LastName": "Douglas",
+        "Role": "Member",
+        "Email": "noel.douglas@example.com",
+        "Phone": "0400 000 040",
+        "IsActive": true
+    },
+    {
+        "MemberId": 41,
+        "FirstName": "Olive",
+        "LastName": "Stevens",
+        "Role": "Member",
+        "Email": "olive.stevens@example.com",
+        "Phone": "0400 000 041",
+        "IsActive": true
+    },
+    {
+        "MemberId": 42,
+        "FirstName": "Paul",
+        "LastName": "Armstrong",
+        "Role": "Member",
+        "Email": "paul.armstrong@example.com",
+        "Phone": "0400 000 042",
+        "IsActive": true
+    },
+    {
+        "MemberId": 43,
+        "FirstName": "Riley",
+        "LastName": "Fleming",
+        "Role": "Member",
+        "Email": "riley.fleming@example.com",
+        "Phone": "0400 000 043",
+        "IsActive": true
+    },
+    {
+        "MemberId": 44,
+        "FirstName": "Sienna",
+        "LastName": "Rowe",
+        "Role": "Member",
+        "Email": "sienna.rowe@example.com",
+        "Phone": "0400 000 044",
+        "IsActive": true
+    },
+    {
+        "MemberId": 45,
+        "FirstName": "Tom",
+        "LastName": "Walsh",
+        "Role": "Member",
+        "Email": "tom.walsh@example.com",
+        "Phone": "0400 000 045",
+        "IsActive": true
+    },
+    {
+        "MemberId": 46,
+        "FirstName": "Una",
+        "LastName": "Higgins",
+        "Role": "Member",
+        "Email": "una.higgins@example.com",
+        "Phone": "0400 000 046",
+        "IsActive": true
+    },
+    {
+        "MemberId": 47,
+        "FirstName": "Violet",
+        "LastName": "Jennings",
+        "Role": "Member",
+        "Email": "violet.jennings@example.com",
+        "Phone": "0400 000 047",
+        "IsActive": true
+    },
+    {
+        "MemberId": 48,
+        "FirstName": "William",
+        "LastName": "Fuller",
+        "Role": "Member",
+        "Email": "william.fuller@example.com",
+        "Phone": "0400 000 048",
+        "IsActive": true
+    },
+    {
+        "MemberId": 49,
+        "FirstName": "Zoe",
+        "LastName": "Shaw",
+        "Role": "Member",
+        "Email": "zoe.shaw@example.com",
+        "Phone": "0400 000 049",
+        "IsActive": true
+    },
+    {
+        "MemberId": 50,
+        "FirstName": "Caleb",
+        "LastName": "Lawson",
+        "Role": "Member",
+        "Email": "caleb.lawson@example.com",
+        "Phone": "0400 000 050",
+        "IsActive": true
+    },
+
+    /* Staff accounts */
+
+    {
+        "MemberId": 51,
+        "FirstName": "Sarah",
+        "LastName": "Librarian",
+        "Role": "Staff",
+        "Email": "sarah.librarian@example.com",
+        "Phone": "0400 000 051",
+        "IsActive": true
+    },
+    {
+        "MemberId": 52,
+        "FirstName": "Mark",
+        "LastName": "Librarian",
+        "Role": "Staff",
+        "Email": "mark.librarian@example.com",
+        "Phone": "0400 000 052",
+        "IsActive": true
+    },
+    {
+        "MemberId": 53,
+        "FirstName": "Julia",
+        "LastName": "Admin",
+        "Role": "Staff",
+        "Email": "julia.admin@example.com",
+        "Phone": "0400 000 053",
+        "IsActive": true
+    },
+    {
+        "MemberId": 54,
+        "FirstName": "Peter",
+        "LastName": "Admin",
+        "Role": "Staff",
+        "Email": "peter.admin@example.com",
+        "Phone": "0400 000 054",
+        "IsActive": true
+    },
+    {
+        "MemberId": 55,
+        "FirstName": "Linda",
+        "LastName": "Manager",
+        "Role": "Staff",
+        "Email": "linda.manager@example.com",
+        "Phone": "0400 000 055",
+        "IsActive": true
+    }
+]
