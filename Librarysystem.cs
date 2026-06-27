@@ -72,7 +72,7 @@ public class LibrarySystem
     public string BorrowBook(int memberId, int bookId)
     {
         var book = Books.FirstOrDefault(b => b.BookId == bookId);
-        var member = Members.FirstOrDefault(m => m.UserId == memberId);
+        var member = Members.FirstOrDefault(m => m.MemberId == memberId);
 
         if (book == null)
             return "Book not found.";
@@ -150,7 +150,7 @@ public class LibrarySystem
     // FIX 1: Changed `group.Key` to `memberId`, and renamed `user` to `member`
     public void ViewBorrowedBooksByMember(int memberId)
     {
-        var member = Members.FirstOrDefault(m => m.UserId == memberId);
+        var member = Members.FirstOrDefault(m => m.MemberId == memberId);
 
         if (member == null)
         {
@@ -168,7 +168,7 @@ public class LibrarySystem
             return;
         }
 
-        Console.WriteLine($"\n==== Borrowed Books for {member.Name} ====\n");
+        Console.WriteLine($"\n==== Borrowed Books for {member.FirstName} {member.LastName} ====\n");
 
         foreach (var loan in memberLoans)
         {
@@ -188,7 +188,7 @@ public class LibrarySystem
     public string ReserveBook(int memberId, int bookId)
     {
         var book = Books.FirstOrDefault(b => b.BookId == bookId);
-        var member = Members.FirstOrDefault(m => m.UserId == memberId);
+        var member = Members.FirstOrDefault(m => m.MemberId == memberId);
 
         if (book == null)
             return "Book not found.";
@@ -240,11 +240,11 @@ public class LibrarySystem
         foreach (var loan in activeLoans)
         {
             var book = Books.FirstOrDefault(b => b.BookId == loan.BookId);
-            var member = Members.FirstOrDefault(m => m.UserId == loan.MemberId);
+            var member = Members.FirstOrDefault(m => m.MemberId == loan.MemberId);
 
             Console.WriteLine($"Loan ID: {loan.LoanId}");
             Console.WriteLine($"Book Title: {book?.Title ?? "Unknown Book"}");
-            Console.WriteLine($"Borrowed By: {member?.Name ?? "Unknown Member"}");
+            Console.WriteLine($"Borrowed By: {member?.FirstName} {member?.LastName ?? "Unknown Member"}");
             Console.WriteLine($"Due Date: {loan.DueDate:dd/MM/yyyy}");
             Console.WriteLine($"Overdue: {(loan.IsOverdue() ? "Yes" : "No")}");
             Console.WriteLine(new string('-', 40));

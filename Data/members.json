@@ -449,9 +449,6 @@
         "Phone": "0400 000 050",
         "IsActive": true
     },
-
-    /* Staff accounts */
-
     {
         "MemberId": 51,
         "FirstName": "Sarah",

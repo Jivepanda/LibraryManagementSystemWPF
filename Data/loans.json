@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "LoanId": 1,
+        "BookId": 1,
+        "MemberId": 2,
+        "BorrowDate": "2026-06-20T00:00:00",
+        "DueDate": "2026-07-04T00:00:00",
+        "Returned": false
+    },
+    {
+        "LoanId": 2,
+        "BookId": 3,
+        "MemberId": 2,
+        "BorrowDate": "2026-06-22T00:00:00",
+        "DueDate": "2026-07-06T00:00:00",
+        "Returned": false
+    },
+    {
+        "LoanId": 3,
+        "BookId": 4,
+        "MemberId": 6,
+        "BorrowDate": "2026-06-25T00:00:00",
+        "DueDate": "2026-07-09T00:00:00",
+        "Returned": false
+    }
+]

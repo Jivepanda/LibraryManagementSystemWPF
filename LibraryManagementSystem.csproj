@@ -9,10 +9,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Books.json" />
+    <None Remove="Data\loans.json" />
+    <None Remove="Data\members.json" />
+    <None Remove="Data\reservations.json" />
+    <None Remove="Images\PlotTwistBanner.png" />
     <None Remove="Images\plot_twist_library_logo_shelf.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\Books.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\loans.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\members.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\reservations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\PlotTwistBanner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\plot_twist_library_logo_shelf.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

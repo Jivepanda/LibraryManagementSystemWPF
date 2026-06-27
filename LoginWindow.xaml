@@ -23,7 +23,7 @@
                 </TransformGroup>
             </Border.RenderTransform>
             <Image Source="Images/PlotTwistBanner.png"
-           Stretch="UniformToFill" Margin="-2,116,8,107" />
+       Stretch="UniformToFill" Margin="-2,116,8,107" />
         </Border>
 
         <!-- Right: welcome and login card -->
@@ -81,13 +81,14 @@
                              Padding="8"
                              BorderBrush="#D0D2E0"
                              BorderThickness="1"
-                             Background="#F8F9FF" />
+                             Background="#F8F9FF"
+                             KeyDown="MemberIdTextBox_KeyDown" />       
 
                     <!-- Sign in button -->
                     <Button x:Name="SignInButton"
                             Content="Sign in ⟶"
                             Height="40"
-                            Background="#4B2A84"
+                            Background="#362C78"
                             Foreground="White"
                             FontWeight="SemiBold"
                             BorderThickness="0"
@@ -102,7 +103,7 @@
                                    Foreground="#60637C"
                                    FontSize="12" />
                         <TextBlock Text="  Register here"
-           Foreground="#4B2A84"
+           Foreground="#362C78"
            FontSize="12"
            FontWeight="SemiBold"
            Cursor="Hand"

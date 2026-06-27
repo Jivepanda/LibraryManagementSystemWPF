@@ -1,35 +1,72 @@
-﻿using System.Windows;
+﻿using System;
+using System.Linq;
+using System.Windows;
 using System.Windows.Input;
+using LibraryManagementSystem.Services;
+using LibraryManagementSystem.Models;
 
 namespace PlotTwistLibrary;
 
 public partial class LoginWindow : Window
 {
+    private readonly LibrarySystem _librarySystem;
+
+
     public LoginWindow()
-    {
-        InitializeComponent();
-    }
+        {
+    
+    InitializeComponent();
+    _librarySystem = new LibrarySystem();
+
+    // TEMP: check how many members were loaded
+   // MessageBox.Show($"Loaded members: {_librarySystem.Members.Count}", "Debug");
+}
 
     private void SignInButton_Click(object sender, RoutedEventArgs e)
     {
-        string memberId = MemberIdTextBox.Text.Trim();
+        var text = MemberIdTextBox.Text?.Trim();
 
-        // TODO: validate memberId against your data source
-        if (!string.IsNullOrEmpty(memberId))
+        if (!int.TryParse(text, out int memberId))
         {
-            // e.g. open main window
-            // new MainWindow(memberId).Show();
-            // this.Close();
+            MessageBox.Show("Please enter a valid numeric Member ID.", "Login",
+                MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
+
+        var member = _librarySystem.Members.FirstOrDefault(m => m.MemberId == memberId);
+
+        if (member == null)
+        {
+            MessageBox.Show("Member not found. Please check your ID or register first.", "Login",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            return;
+        }
+
+        // Only open the user dashboard for non-staff roles
+        if (!string.Equals(member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
+        {
+            var dashboard = new UserDashboardWindow(member);
+            dashboard.Show();
+            this.Close();
         }
         else
         {
-            MessageBox.Show("Please enter your Member ID.", "Login", MessageBoxButton.OK, MessageBoxImage.Warning);
+            MessageBox.Show("This ID belongs to staff. Please use the staff login path.",
+                "Login", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
+    
 
-    private void RegisterText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+private void MemberIdTextBox_KeyDown(object sender, KeyEventArgs e)
+{
+    if (e.Key == Key.Enter)
+    {
+        // Reuse the same logic as button click
+        SignInButton_Click(SignInButton, new RoutedEventArgs());
+    }
+}
+private void RegisterText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         // TODO: open registration window
-        // new RegisterWindow().Show();
     }
 }
