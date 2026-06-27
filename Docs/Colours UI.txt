@@ -1,0 +1,17 @@
+Colours UI 
+
+362C78  - purple 
+
+
+ Background="#362C78"
+ Foreground="White"
+ BorderBrush="#D0D2E0"
+
+
+<!-- Default background -->
+<Setter Property="Background" Value="#F5EFE6" />
+
+<Style.Triggers>
+    <!-- Every 2nd row uses a slightly different colour -->
+    <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+        <Setter Property="Background" Value="#ECE4D8" />

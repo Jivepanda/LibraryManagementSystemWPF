@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Windows;
 using LibraryManagementSystem.Models;
 using LibraryManagementSystem.Services;
-using PlotTwistLibrary.UIModels;
+using LibraryManagementSystem.Helpers;
+using LibraryManagementSystem.ViewModels;
 
 namespace PlotTwistLibrary;
 
@@ -51,12 +52,18 @@ public partial class UserDashboardWindow : Window
 
         BorrowedBooksGrid.ItemsSource = items;
     }
+    private void OpenSearchBooksWindow()
+    {
+        WindowHelpers.OpenSearchBooksWindow(this, _librarySystem, _member);
+    }
+
     private void SearchBooksButton_Click(object sender, RoutedEventArgs e)
     {
-        var searchWindow = new SearchBooksWindow(_librarySystem)
-        {
-            Owner = this
-        };
-        searchWindow.ShowDialog();
+        OpenSearchBooksWindow();
+    }
+
+    private void TopBarSearchBooksButton_Click(object sender, RoutedEventArgs e)
+    {
+        OpenSearchBooksWindow();
     }
 }

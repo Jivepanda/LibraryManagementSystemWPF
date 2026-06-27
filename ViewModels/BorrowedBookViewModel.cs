@@ -1,4 +1,4 @@
-﻿namespace PlotTwistLibrary.UIModels
+﻿namespace LibraryManagementSystem.ViewModels
 {
     public class BorrowedBookViewModel
     {

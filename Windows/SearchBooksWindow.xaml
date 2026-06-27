@@ -38,6 +38,7 @@
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center">
                     <Button Content="Home"
+                         Click="HomeButton_Click"
                          Padding="16,4"
                          Margin="0,0,16,0"
                          Background="#241D5E"
