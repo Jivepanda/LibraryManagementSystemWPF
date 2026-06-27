@@ -22,10 +22,10 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </Border.RenderTransform>
-            <Image Source="Images/PlotTwistBanner.png"
-       Stretch="UniformToFill" Margin="-2,116,8,107" />
+            <Image Source="pack://application:,,,/Images/PlotTwistBanner.png"
+           Stretch="UniformToFill"
+           Margin="-2,116,8,107" />
         </Border>
-
         <!-- Right: welcome and login card -->
         <Grid Grid.Column="1"
               Margin="80"
