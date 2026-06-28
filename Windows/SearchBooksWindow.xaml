@@ -50,12 +50,6 @@
                          Background="Transparent"
                          Foreground="White"
                          BorderBrush="Transparent" />
-                    <Button Content="My Loans"
-                         Padding="16,4"
-                         Margin="0,0,16,0"
-                         Background="Transparent"
-                         Foreground="White"
-                         BorderBrush="Transparent" />
                     <Button Content="Return Book"
                          Padding="16,4"
                          Margin="0,0,16,0"

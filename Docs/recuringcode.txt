@@ -1,0 +1,33 @@
+﻿
+
+Search Books button
+Code
+
+private void OpenSearchBooksWindow()
+{
+    var searchWindow = new SearchBooksWindow(_librarySystem, _member)
+    {
+        Owner = this
+    };
+    searchWindow.ShowDialog();
+}
+
+////////
+
+private void HeaderSearchBooksButton_Click(object sender, RoutedEventArgs e)
+{
+    var searchWindow = new SearchBooksWindow(_librarySystem, _member)
+    {
+        Owner = this
+    };
+    searchWindow.ShowDialog();
+}
+/////////
+
+XAML
+<Button x:Name="HeaderSearchBooksButton"
+        Content="Search Books"
+        Click="HeaderSearchBooksButton_Click"
+        ... />
+////////
+

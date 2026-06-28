@@ -117,34 +117,13 @@ public class LibrarySystem
         return $"Book borrowed successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
     }
 
-    public string ReturnBook(int memberId, int bookId)
+    public void ReturnLoan(Loan loan)
     {
-        var book = Books.FirstOrDefault(b => b.BookId == bookId);
-        var loan = Loans.FirstOrDefault(l =>
-            l.BookId == bookId &&
-            l.MemberId == memberId &&
-            !l.Returned);
+        if (loan == null) return;
 
-        if (book == null)
-            return "Book not found.";
-
-        if (loan == null)
-            return "No active loan found for this member and book.";
-
-        bool wasOverdue = loan.IsOverdue();
-
-        bool returned = book.ReturnCopy();
-
-        if (!returned)
-            return "Return failed. Available copies would exceed total copies.";
-
-        loan.MarkReturned();
-        SaveAllData();
-
-        if (wasOverdue)
-            return "Book returned successfully. This book was returned late and may incur late fees.";
-
-        return "Book returned successfully.";
+        loan.Returned = true;
+        // If you track return date:
+        // loan.ReturnDate = DateTime.Now;
     }
 
     // FIX 1: Changed `group.Key` to `memberId`, and renamed `user` to `member`
