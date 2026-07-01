@@ -1,6 +1,4 @@
-﻿namespace LibraryManagementSystem.Models;
-
-public class Book
+﻿public class Book
 {
     public int BookId { get; set; }
     public string Title { get; set; } = string.Empty;
@@ -9,6 +7,7 @@ public class Book
     public int TotalCopies { get; set; }
     public int AvailableCopies { get; set; }
 
+    // Availability is calculated from AvailableCopies
     public bool IsAvailable()
     {
         return AvailableCopies > 0;

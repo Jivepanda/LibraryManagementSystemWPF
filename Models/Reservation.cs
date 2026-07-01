@@ -7,7 +7,7 @@ public class Reservation
     public int MemberId { get; set; }
     public DateTime ReserveDate { get; set; }
     public DateTime ReserveExpiry { get; set; }
-    public string Status { get; set; } = "Active";
+    public string Status { get; private set; } = "Active";
 
     public void MarkFulfilled()
     {
@@ -18,4 +18,6 @@ public class Reservation
     {
         Status = "Cancelled";
     }
+
+    public bool IsActive => Status == "Active";
 }

@@ -162,46 +162,7 @@ public class LibrarySystem
             Console.WriteLine(new string('-', 40));
         }
     }
-
-    // FIX 2: Changed `Users` to `Members`
-    public string ReserveBook(int memberId, int bookId)
-    {
-        var book = Books.FirstOrDefault(b => b.BookId == bookId);
-        var member = Members.FirstOrDefault(m => m.MemberId == memberId);
-
-        if (book == null)
-            return "Book not found.";
-
-        if (member == null)
-            return "Member not found.";
-
-        bool alreadyReserved = Reservations.Any(r =>
-            r.BookId == bookId &&
-            r.MemberId == memberId &&
-            r.Status == "Active");
-
-        if (alreadyReserved)
-            return "This member already has an active reservation for this book.";
-
-        int nextReservationId = Reservations.Count == 0
-            ? 1
-            : Reservations.Max(r => r.ReservationId) + 1;
-
-        Reservation newReservation = new Reservation
-        {
-            ReservationId = nextReservationId,
-            BookId = bookId,
-            MemberId = memberId,
-            ReserveDate = DateTime.Now.Date,
-            ReserveExpiry = DateTime.Now.Date.AddDays(7),
-            Status = "Active"
-        };
-
-        Reservations.Add(newReservation);
-        SaveAllData();
-
-        return $"Book reserved successfully until {newReservation.ReserveExpiry:dd/MM/yyyy}.";
-    }
+   
 
     // FIX 3: Renamed `user` to `member`, and fixed closing brace so ListUsersWithBorrowedBooks is no longer nested inside
     public void ListAllLoans()
