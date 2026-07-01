@@ -61,7 +61,8 @@
                             Margin="0,0,0,0"
                             Background="Transparent"
                             Foreground="#FFB0B0"
-                            BorderBrush="Transparent" />
+                            BorderBrush="Transparent" 
+                            Click="LogoutButton_Click" />
                 </StackPanel>
 
                 <!-- User badge -->

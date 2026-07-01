@@ -41,7 +41,7 @@ public partial class LoginWindow : Window
         {
             var dashboard = new UserDashboardWindow(member, _librarySystem);
             dashboard.Show();
-            Close();
+            this.Close();
         }
         else
         {

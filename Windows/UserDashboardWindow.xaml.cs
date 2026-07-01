@@ -163,4 +163,10 @@ public partial class UserDashboardWindow : Window
 
     private void ReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
     private void HeaderReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
+    private void LogoutButton_Click(object sender, RoutedEventArgs e)
+    {
+        var loginWindow = new LoginWindow();
+        loginWindow.Show();
+        this.Close();
+    }
 }

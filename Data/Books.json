@@ -124,7 +124,7 @@
         "TotalCopies": 2,
         "AvailableCopies": 2,
         "Description": "Describes practices for reliable, frequent software releases through automation and testing."
-    }
+    },
     {
         "BookId": 15,
         "Title": "The Clean Coder",

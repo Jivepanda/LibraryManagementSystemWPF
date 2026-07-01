@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using LibraryManagementSystem.Models;
 using LibraryManagementSystem.Services;
 
@@ -19,31 +20,39 @@ namespace PlotTwistLibrary
             UserBadgeText.Text = $"User: {_member.FirstName}";
         }
 
+        private void RunSearch()
+        {
+            var query = SearchTextBox.Text?.Trim() ?? string.Empty;
+            var results = _librarySystem.SearchBooks(query);
+            SearchResultsGrid.ItemsSource = results;
+        }
+
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            LoadSearchResults();
+            RunSearch();
+        }
+
+        private void SearchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                RunSearch();
+            }
         }
 
         private void ReserveBookButton_Click(object sender, RoutedEventArgs e)
         {
             if (SearchResultsGrid.SelectedItem is not Book selectedBook)
             {
-                MessageBox.Show("Please select a book to reserve.", "Reserve Book");
+                MessageBox.Show("Please select a book to reserve.", "Reserve Book",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            string result = _librarySystem.ReservationsManager
-                .ReserveBook(_member.MemberId, selectedBook.BookId);
+            var result = _librarySystem.ReservationsManager.ReserveBook(_member.MemberId, selectedBook.BookId);
+            MessageBox.Show(result, "Reserve Book", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            MessageBox.Show(result, "Reserve Book");
-            LoadSearchResults();
-        }
-
-        private void LoadSearchResults()
-        {
-            var query = SearchTextBox.Text?.Trim() ?? string.Empty;
-            var results = _librarySystem.SearchBooks(query);
-            SearchResultsGrid.ItemsSource = results;
+            RunSearch();
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -52,6 +61,18 @@ namespace PlotTwistLibrary
             {
                 Owner.Show();
                 Owner.Activate();
+            }
+
+            Close();
+        }
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
+
+            if (Owner != null)
+            {
+                Owner.Close();
             }
 
             Close();

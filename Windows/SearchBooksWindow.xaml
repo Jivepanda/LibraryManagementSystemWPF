@@ -61,7 +61,8 @@
                          Margin="0,0,0,0"
                          Background="Transparent"
                          Foreground="#FFB0B0"
-                         BorderBrush="Transparent" />
+                         BorderBrush="Transparent"
+                         Click="LogoutButton_Click"/>
                 </StackPanel>
 
                 <!-- User badge -->
@@ -88,7 +89,8 @@
              Width="300"
              Height="32"
              Margin="0,0,8,0"
-             Padding="8" />
+             Padding="8"
+             KeyDown="SearchTextBox_KeyDown" />
 
             <Button Content="Search"
             Width="100"
