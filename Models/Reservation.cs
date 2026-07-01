@@ -1,5 +1,14 @@
 ﻿namespace LibraryManagementSystem.Models;
 
+public enum ReservationStatus
+{
+    Reserved,
+    AvailableToCollect,
+    Fulfilled,
+    Cancelled,
+    Expired
+}
+
 public class Reservation
 {
     public int ReservationId { get; set; }
@@ -7,17 +16,17 @@ public class Reservation
     public int MemberId { get; set; }
     public DateTime ReserveDate { get; set; }
     public DateTime ReserveExpiry { get; set; }
-    public string Status { get; private set; } = "Active";
+    public ReservationStatus Status { get; private set; } = ReservationStatus.Reserved;
 
-    public void MarkFulfilled()
-    {
-        Status = "Fulfilled";
-    }
+    public bool IsActive =>
+        Status == ReservationStatus.Reserved ||
+        Status == ReservationStatus.AvailableToCollect;
 
-    public void Cancel()
-    {
-        Status = "Cancelled";
-    }
+    public bool IsExpired() =>
+        IsActive && DateTime.Now.Date > ReserveExpiry.Date;
 
-    public bool IsActive => Status == "Active";
+    public void MarkAvailableToCollect() => Status = ReservationStatus.AvailableToCollect;
+    public void MarkFulfilled() => Status = ReservationStatus.Fulfilled;
+    public void Cancel() => Status = ReservationStatus.Cancelled;
+    public void Expire() => Status = ReservationStatus.Expired;
 }

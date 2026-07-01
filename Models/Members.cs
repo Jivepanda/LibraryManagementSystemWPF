@@ -1,6 +1,6 @@
 ﻿using LibraryManagementSystem.Models;
 
-public class Member
+public class Member : User
 {
     public int MemberId { get; set; }
     public string FirstName { get; set; } = string.Empty;

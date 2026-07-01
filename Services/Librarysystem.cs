@@ -17,6 +17,8 @@ public class LibrarySystem
     private readonly string loansFile = "Data/loans.json";
     private readonly string reservationsFile = "Data/reservations.json";
 
+    public ReservationService ReservationsManager { get; }
+
     public LibrarySystem()
     {
         _storageService = new FileStorageService();
@@ -24,6 +26,12 @@ public class LibrarySystem
         Members = _storageService.LoadData<Member>(membersFile);
         Loans = _storageService.LoadData<Loan>(loansFile);
         Reservations = _storageService.LoadData<Reservation>(reservationsFile);
+
+        ReservationsManager = new ReservationService(
+            Books,
+            Members,
+            Reservations,
+            SaveAllData);
     }
 
     public void SaveAllData()
@@ -162,7 +170,7 @@ public class LibrarySystem
             Console.WriteLine(new string('-', 40));
         }
     }
-   
+
 
     // FIX 3: Renamed `user` to `member`, and fixed closing brace so ListUsersWithBorrowedBooks is no longer nested inside
     public void ListAllLoans()
@@ -206,5 +214,81 @@ public class LibrarySystem
 
         Console.WriteLine("\n==== Users With Borrowed Books ====\n");
     }
-}
 
+
+    public class ReservationService
+    {
+        private const int MaxActiveReservations = 3;
+        private const int ReservationDurationDays = 7;
+
+        private readonly List<Book> _books;
+        private readonly List<Member> _members;
+        private readonly List<Reservation> _reservations;
+        private readonly Action _saveAllData;
+
+        public ReservationService(
+            List<Book> books,
+            List<Member> members,
+            List<Reservation> reservations,
+            Action saveAllData)
+        {
+            _books = books;
+            _members = members;
+            _reservations = reservations;
+            _saveAllData = saveAllData;
+        }
+
+        public string ReserveBook(int memberId, int bookId)
+        {
+            var book = _books.FirstOrDefault(b => b.BookId == bookId);
+            if (book == null)
+                return "Book not found.";
+
+            var member = _members.FirstOrDefault(m => m.UserId == memberId);
+            if (member == null)
+                return "Member not found.";
+
+            if (GetActiveReservationCount(memberId) >= MaxActiveReservations)
+                return "Member cannot have more than three active reservations.";
+
+            bool alreadyReserved = _reservations.Any(r =>
+                r.BookId == bookId &&
+                r.MemberId == memberId &&
+                r.IsActive);
+
+            if (alreadyReserved)
+                return "This member already has an active reservation for this book.";
+
+            int nextReservationId = _reservations.Count == 0
+                ? 1
+                : _reservations.Max(r => r.ReservationId) + 1;
+
+            var newReservation = new Reservation
+            {
+                ReservationId = nextReservationId,
+                BookId = bookId,
+                MemberId = memberId,
+                ReserveDate = DateTime.Now.Date,
+                ReserveExpiry = DateTime.Now.Date.AddDays(ReservationDurationDays)
+            };
+
+            _reservations.Add(newReservation);
+            _saveAllData();
+
+            return $"Book reserved successfully until {newReservation.ReserveExpiry:dd/MM/yyyy}.";
+        }
+
+        public Reservation? GetNextReservedInQueue(int bookId)
+        {
+            return _reservations
+                .Where(r => r.BookId == bookId && r.Status == ReservationStatus.Reserved)
+                .OrderBy(r => r.ReserveDate)
+                .FirstOrDefault();
+        }
+
+        public int GetActiveReservationCount(int memberId)
+        {
+            return _reservations.Count(r => r.MemberId == memberId && r.IsActive);
+        }
+    }
+}
