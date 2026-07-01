@@ -22,5 +22,37 @@
         "BorrowDate": "2026-06-25T00:00:00",
         "DueDate": "2026-07-09T00:00:00",
         "Returned": false
+    },
+    {
+        "LoanId": 4,
+        "BookId": 11,
+        "MemberId": 1,
+        "BorrowDate": "2026-06-18T00:00:00",
+        "DueDate": "2026-07-02T00:00:00",
+        "Returned": false
+    },
+    {
+        "LoanId": 5,
+        "BookId": 12,
+        "MemberId": 1,
+        "BorrowDate": "2026-06-19T00:00:00",
+        "DueDate": "2026-07-03T00:00:00",
+        "Returned": false
+    },
+    {
+        "LoanId": 6,
+        "BookId": 13,
+        "MemberId": 1,
+        "BorrowDate": "2026-06-15T00:00:00",
+        "DueDate": "2026-06-29T00:00:00",
+        "Returned": false
+    },
+    {
+        "LoanId": 7,
+        "BookId": 2,
+        "MemberId": 3,
+        "BorrowDate": "2026-06-21T00:00:00",
+        "DueDate": "2026-07-05T00:00:00",
+        "Returned": false
     }
 ]

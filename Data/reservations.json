@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "ReservationId": 1,
+        "BookId": 11,
+        "MemberId": 4,
+        "ReserveDate": "2026-07-01T00:00:00",
+        "ReserveExpiry": "2026-07-08T00:00:00",
+        "Status": 0
+    },
+    {
+        "ReservationId": 2,
+        "BookId": 2,
+        "MemberId": 1,
+        "ReserveDate": "2026-07-01T00:00:00",
+        "ReserveExpiry": "2026-07-08T00:00:00",
+        "Status": 1
+    },
+    {
+        "ReservationId": 3,
+        "BookId": 14,
+        "MemberId": 1,
+        "ReserveDate": "2026-07-01T00:00:00",
+        "ReserveExpiry": "2026-07-08T00:00:00",
+        "Status": 0
+    },
+    {
+        "ReservationId": 4,
+        "BookId": 15,
+        "MemberId": 1,
+        "ReserveDate": "2026-07-01T00:00:00",
+        "ReserveExpiry": "2026-07-08T00:00:00",
+        "Status": 0
+    }
+]

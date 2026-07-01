@@ -14,12 +14,12 @@ public partial class UserDashboardWindow : Window
     private readonly Member _member;
     private readonly LibrarySystem _librarySystem;
 
-    public UserDashboardWindow(Member member)
+    public UserDashboardWindow(Member member, LibrarySystem librarySystem)
     {
         InitializeComponent();
 
         _member = member;
-        _librarySystem = new LibrarySystem();
+        _librarySystem = librarySystem;
 
         UserBadgeText.Text = $"User: {_member.FirstName}";
         WelcomeText.Text = $"Welcome back, {_member.FirstName} — what adventure are we on today?";
@@ -29,98 +29,138 @@ public partial class UserDashboardWindow : Window
 
     private void LoadBorrowedBooks()
     {
-        // Active loans for this member
+        var items = new List<BorrowedBookViewModel>();
+
         var memberLoans = _librarySystem.Loans
             .Where(l => l.MemberId == _member.MemberId && !l.Returned)
             .ToList();
-
-        var items = new List<BorrowedBookViewModel>();
 
         foreach (var loan in memberLoans)
         {
             var book = _librarySystem.Books.FirstOrDefault(b => b.BookId == loan.BookId);
 
-            var vm = new BorrowedBookViewModel
+            items.Add(new BorrowedBookViewModel
             {
                 BookId = loan.BookId,
+                LoanId = loan.LoanId,
                 Title = book?.Title ?? "Unknown Book",
-                DueDateString = loan.DueDate.ToString("dd/MM/yyyy"),
+                DateString = loan.DueDate.ToString("dd/MM/yyyy"),
                 Status = loan.IsOverdue() ? "Overdue" : "Active"
-            };
+            });
+        }
 
-            items.Add(vm);
+        var memberReservations = _librarySystem.Reservations
+            .Where(r => r.MemberId == _member.MemberId && r.IsActive)
+            .ToList();
+
+        foreach (var reservation in memberReservations)
+        {
+            var book = _librarySystem.Books.FirstOrDefault(b => b.BookId == reservation.BookId);
+
+            items.Add(new BorrowedBookViewModel
+            {
+                BookId = reservation.BookId,
+                ReservationId = reservation.ReservationId,
+                Title = book?.Title ?? "Unknown Book",
+                DateString = reservation.ReserveExpiry.ToString("dd/MM/yyyy"),
+                Status = reservation.Status == ReservationStatus.AvailableToCollect
+                    ? "Available to Collect"
+                    : "Reserved"
+            });
         }
 
         BorrowedBooksGrid.ItemsSource = items;
+
+        CollectReservedBookQuickMenuButton.Visibility =
+            items.Any(i => i.IsReservationReadyToCollect)
+                ? Visibility.Visible
+                : Visibility.Collapsed;
     }
-    // Helper method to open the SearchBooksWindow
+
     private void OpenSearchBooksWindow()
     {
         WindowHelpers.OpenSearchBooksWindow(this, _librarySystem, _member);
     }
 
-    private void SearchBooksButton_Click(object sender, RoutedEventArgs e)
+    private void SearchBooksButton_Click(object sender, RoutedEventArgs e) => OpenSearchBooksWindow();
+    private void TopBarSearchBooksButton_Click(object sender, RoutedEventArgs e) => OpenSearchBooksWindow();
+    private void ReserveBookQuickMenuButton_Click(object sender, RoutedEventArgs e) => OpenSearchBooksWindow();
+
+    private void HandleCollectReservedBook()
     {
-        OpenSearchBooksWindow();
+        var selected = BorrowedBooksGrid.SelectedItem as BorrowedBookViewModel;
+
+        if (selected != null && selected.ReservationId.HasValue)
+        {
+            if (!selected.IsReservationReadyToCollect)
+            {
+                MessageBox.Show("The selected reservation is not ready to collect.", "Collect Reserved Book");
+                return;
+            }
+
+            var message = $"You wish to collect \"{selected.Title}\".";
+            if (MessageBox.Show(message, "Confirm Collection", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+                return;
+
+            var result = _librarySystem.CollectReservedBook(_member.MemberId, selected.ReservationId.Value);
+            MessageBox.Show(result, "Collect Reserved Book");
+            LoadBorrowedBooks();
+            return;
+        }
+
+        var collectWindow = new CollectReservedBookWindow(_librarySystem, _member)
+        {
+            Owner = this
+        };
+
+        if (collectWindow.ShowDialog() == true && collectWindow.SelectedReservation != null)
+        {
+            var result = _librarySystem.CollectReservedBook(
+                _member.MemberId,
+                collectWindow.SelectedReservation.ReservationId);
+
+            MessageBox.Show(result, "Collect Reserved Book");
+            LoadBorrowedBooks();
+        }
     }
 
-    private void TopBarSearchBooksButton_Click(object sender, RoutedEventArgs e)
-    {
-        OpenSearchBooksWindow();
-    }
-    // Helper method to handle returning a book
+    private void CollectReservedBookQuickMenuButton_Click(object sender, RoutedEventArgs e) => HandleCollectReservedBook();
+
     private void HandleReturnBook()
     {
         var selected = BorrowedBooksGrid.SelectedItem as BorrowedBookViewModel;
 
         if (selected != null)
         {
-            // Confirmation for the selected book
-            var message = $"You wish to return {selected.Title} due {selected.DueDateString}.";
-            var result = MessageBox.Show(message, "Confirm return", MessageBoxButton.YesNo);
-
-            if (result == MessageBoxResult.Yes)
+            if (!selected.IsActiveLoan || !selected.LoanId.HasValue)
             {
-                // Find matching active loan for this member/book
-                var loan = _librarySystem.Loans
-    .FirstOrDefault(l => l.MemberId == _member.MemberId &&
-                         l.BookId == selected.BookId &&
-                         !l.Returned);
-
-                if (loan != null)
-                {
-                    _librarySystem.ReturnLoan(loan);
-                    LoadBorrowedBooks();     // refresh grid
-                }
+                MessageBox.Show("Please select an active loan to return.", "Return Book");
+                return;
             }
+
+            var message = $"You wish to return \"{selected.Title}\" due {selected.DateString}.";
+            if (MessageBox.Show(message, "Confirm Return", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+                return;
+
+            var result = _librarySystem.ReturnLoan(selected.LoanId.Value);
+            MessageBox.Show(result, "Return Book");
+            LoadBorrowedBooks();
             return;
         }
 
-        // No selection: use popup
         var returnWindow = new ReturnBookWindow(_librarySystem, _member)
         {
             Owner = this
         };
 
-        bool? dialogResult = returnWindow.ShowDialog();
-        if (dialogResult == true)
+        if (returnWindow.ShowDialog() == true && returnWindow.SelectedLoan != null)
         {
-            var loan = returnWindow.SelectedLoan;
-            if (loan != null)
-            {
-                _librarySystem.ReturnLoan(loan);
-                LoadBorrowedBooks();         // refresh grid
-            }
+            var result = _librarySystem.ReturnLoan(returnWindow.SelectedLoan.LoanId);
+            MessageBox.Show(result, "Return Book");
+            LoadBorrowedBooks();
         }
     }
-    // No selection: open the popup
-     
-    private void ReturnBookButton_Click(object sender, RoutedEventArgs e)
-    {
-        HandleReturnBook();
-    }
-    private void HeaderReturnBookButton_Click(object sender, RoutedEventArgs e)
-    {
-        HandleReturnBook();
-    }
+
+    private void ReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
+    private void HeaderReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
 }

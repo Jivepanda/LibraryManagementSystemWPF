@@ -1,902 +1,902 @@
 [
-  {
-    "BookId": 1,
-    "Title": "Clean Code",
-    "Author": "Robert C. Martin",
-    "PublicationDate": "2008-08-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Practical advice on writing readable, maintainable code with refactoring examples and coding principles."
-  },
-  {
-    "BookId": 2,
-    "Title": "The Pragmatic Programmer",
-    "Author": "Andrew Hunt",
-    "PublicationDate": "1999-10-30T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Guides developers to think pragmatically about coding, design, and career-long craftsmanship."
-  },
-  {
-    "BookId": 3,
-    "Title": "Design Patterns: Elements of Reusable Object-Oriented Software",
-    "Author": "Gang of Four",
-    "PublicationDate": "1994-10-21T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Classic catalog of reusable object-oriented design patterns with examples in C++ and Smalltalk."
-  },
-  {
-    "BookId": 4,
-    "Title": "Introduction to Algorithms",
-    "Author": "Thomas H. Cormen",
-    "PublicationDate": "1990-07-12T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Comprehensive reference on algorithms with theory, proofs, and pseudocode for many core topics."
-  },
-  {
-    "BookId": 5,
-    "Title": "The Mythical Man-Month",
-    "Author": "Frederick P. Brooks Jr.",
-    "PublicationDate": "1975-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Essays on software project management, team communication, and the limits of adding more people."
-  },
-  {
-    "BookId": 6,
-    "Title": "Code Complete",
-    "Author": "Steve McConnell",
-    "PublicationDate": "2004-06-09T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Detailed guide to construction-level coding techniques, style, and quality for large codebases."
-  },
-  {
-    "BookId": 7,
-    "Title": "Refactoring: Improving the Design of Existing Code",
-    "Author": "Martin Fowler",
-    "PublicationDate": "1999-07-08T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Shows step-by-step refactorings to make legacy code cleaner, safer, and easier to extend."
-  },
-  {
-    "BookId": 8,
-    "Title": "Head First Design Patterns",
-    "Author": "Eric Freeman",
-    "PublicationDate": "2004-10-25T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Visual, example-heavy introduction to design patterns for beginners and intermediate coders."
-  },
-  {
-    "BookId": 9,
-    "Title": "You Don't Know JS: Scope & Closures",
-    "Author": "Kyle Simpson",
-    "PublicationDate": "2014-03-27T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Short deep-dive into JavaScript scope, closures, and how the language handles variables."
-  },
-  {
-    "BookId": 10,
-    "Title": "Structure and Interpretation of Computer Programs",
-    "Author": "Harold Abelson",
-    "PublicationDate": "1984-07-25T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Foundational text exploring programming concepts, abstraction, and interpreters with Scheme."
-  },
-  {
-    "BookId": 11,
-    "Title": "The Art of Computer Programming, Vol. 1",
-    "Author": "Donald E. Knuth",
-    "PublicationDate": "1968-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Advanced reference on algorithms, mathematical analysis, and fundamental programming techniques."
-  },
-  {
-    "BookId": 12,
-    "Title": "Domain-Driven Design",
-    "Author": "Eric Evans",
-    "PublicationDate": "2003-08-30T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains how to design complex systems by modeling rich domains with ubiquitous language."
-  },
-  {
-    "BookId": 13,
-    "Title": "Working Effectively with Legacy Code",
-    "Author": "Michael Feathers",
-    "PublicationDate": "2004-09-22T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Techniques for adding tests and refactoring legacy systems without breaking existing behavior."
-  },
-  {
-    "BookId": 14,
-    "Title": "Continuous Delivery",
-    "Author": "Jez Humble",
-    "PublicationDate": "2010-07-27T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Describes practices for reliable, frequent software releases through automation and testing."
-  },
-  {
-    "BookId": 15,
-    "Title": "The Clean Coder",
-    "Author": "Robert C. Martin",
-    "PublicationDate": "2011-05-13T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Focuses on professional habits, ethics, and discipline needed to be a responsible developer."
-  },
-  {
-    "BookId": 16,
-    "Title": "Cracking the Coding Interview",
-    "Author": "Gayle Laakmann McDowell",
-    "PublicationDate": "2015-07-01T00:00:00",
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "Interview preparation book with coding questions, solutions, and tips for technical interviews."
-  },
-  {
-    "BookId": 17,
-    "Title": "Algorithms, Part I",
-    "Author": "Robert Sedgewick",
-    "PublicationDate": "2011-02-06T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Introduction to data structures and elementary algorithms with an emphasis on Java code."
-  },
-  {
-    "BookId": 18,
-    "Title": "C# in Depth",
-    "Author": "Jon Skeet",
-    "PublicationDate": "2019-03-05T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Explores advanced C# language features and how to use them effectively in real projects."
-  },
-  {
-    "BookId": 19,
-    "Title": "Pro C# 10 with .NET 6",
-    "Author": "Andrew Troelsen",
-    "PublicationDate": "2022-01-11T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Comprehensive guide to modern C# and .NET 6, covering language, libraries, and application types."
-  },
-  {
-    "BookId": 20,
-    "Title": "Agile Principles, Patterns, and Practices in C#",
-    "Author": "Robert C. Martin",
-    "PublicationDate": "2006-07-20T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Applies agile principles and design patterns to C# projects with case studies and examples."
-  },
-  {
-    "BookId": 21,
-    "Title": "Head First Java",
-    "Author": "Kathy Sierra",
-    "PublicationDate": "2003-02-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Beginner-friendly introduction to Java using visual explanations and practical exercises."
-  },
-  {
-    "BookId": 22,
-    "Title": "Effective Java",
-    "Author": "Joshua Bloch",
-    "PublicationDate": "2001-05-08T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Collection of best practices and design tips for writing robust, efficient Java code."
-  },
-  {
-    "BookId": 23,
-    "Title": "Java Concurrency in Practice",
-    "Author": "Brian Goetz",
-    "PublicationDate": "2006-05-19T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Deep dive into building correct and performant concurrent programs in Java."
-  },
-  {
-    "BookId": 24,
-    "Title": "Patterns of Enterprise Application Architecture",
-    "Author": "Martin Fowler",
-    "PublicationDate": "2002-11-15T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Catalog of patterns for building large-scale enterprise systems with layered architectures."
-  },
-  {
-    "BookId": 25,
-    "Title": "Test-Driven Development: By Example",
-    "Author": "Kent Beck",
-    "PublicationDate": "2002-11-08T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Introduces TDD through simple examples, showing how tests drive design and refactoring."
-  },
-  {
-    "BookId": 26,
-    "Title": "Extreme Programming Explained",
-    "Author": "Kent Beck",
-    "PublicationDate": "1999-10-18T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Describes Extreme Programming values and practices for small, agile development teams."
-  },
-  {
-    "BookId": 27,
-    "Title": "The Phoenix Project",
-    "Author": "Gene Kim",
-    "PublicationDate": "2013-01-10T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Novel about IT operations, DevOps, and improving flow in a struggling company."
-  },
-  {
-    "BookId": 28,
-    "Title": "The DevOps Handbook",
-    "Author": "Gene Kim",
-    "PublicationDate": "2016-10-06T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Practical guide to implementing DevOps practices for faster, safer software delivery."
-  },
-  {
-    "BookId": 29,
-    "Title": "Soft Skills: The Software Developer's Life Manual",
-    "Author": "John Sonmez",
-    "PublicationDate": "2014-12-29T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Covers career, productivity, learning, and life skills for software developers."
-  },
-  {
-    "BookId": 30,
-    "Title": "The Linux Programming Interface",
-    "Author": "Michael Kerrisk",
-    "PublicationDate": "2010-10-28T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Detailed reference to Linux system calls, APIs, and low-level programming concepts."
-  },
-  {
-    "BookId": 31,
-    "Title": "Operating System Concepts",
-    "Author": "Abraham Silberschatz",
-    "PublicationDate": "1982-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Standard textbook covering processes, memory, file systems, and OS design principles."
-  },
-  {
-    "BookId": 32,
-    "Title": "Computer Networks",
-    "Author": "Andrew S. Tanenbaum",
-    "PublicationDate": "1981-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains networking concepts from physical layer up to applications with clear diagrams."
-  },
-  {
-    "BookId": 33,
-    "Title": "Compilers: Principles, Techniques, and Tools",
-    "Author": "Alfred V. Aho",
-    "PublicationDate": "1986-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Known as the Dragon Book, covers theory and practice of compiler design and implementation."
-  },
-  {
-    "BookId": 34,
-    "Title": "Clean Architecture",
-    "Author": "Robert C. Martin",
-    "PublicationDate": "2017-09-20T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Guides architects on separating concerns and designing systems with clear boundaries."
-  },
-  {
-    "BookId": 35,
-    "Title": "The Linux Command Line",
-    "Author": "William E. Shotts Jr.",
-    "PublicationDate": "2012-01-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Beginner-friendly introduction to Linux shell usage and scripting with practical examples."
-  },
-  {
-    "BookId": 36,
-    "Title": "Python Crash Course",
-    "Author": "Eric Matthes",
-    "PublicationDate": "2015-11-01T00:00:00",
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "Hands-on introduction to Python with exercises and small projects for beginners."
-  },
-  {
-    "BookId": 37,
-    "Title": "Fluent Python",
-    "Author": "Luciano Ramalho",
-    "PublicationDate": "2015-08-20T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explores advanced Python features and idioms to write clear, powerful Pythonic code."
-  },
-  {
-    "BookId": 38,
-    "Title": "Automate the Boring Stuff with Python",
-    "Author": "Al Sweigart",
-    "PublicationDate": "2015-04-14T00:00:00",
-    "TotalCopies": 4,
-    "AvailableCopies": 4,
-    "Description": "Shows how to use Python scripts to automate everyday tasks like files, Excel, and web data."
-  },
-  {
-    "BookId": 39,
-    "Title": "Designing Data-Intensive Applications",
-    "Author": "Martin Kleppmann",
-    "PublicationDate": "2017-03-16T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains the principles behind scalable, reliable data systems and modern storage technologies."
-  },
-  {
-    "BookId": 40,
-    "Title": "SQL Antipatterns",
-    "Author": "Bill Karwin",
-    "PublicationDate": "2010-07-12T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Shows common database design and query mistakes and how to fix them for better SQL."
-  },
-  {
-    "BookId": 41,
-    "Title": "Seven Databases in Seven Weeks",
-    "Author": "Eric Redmond",
-    "PublicationDate": "2012-05-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Tours different database models, from relational to NoSQL, with practical examples."
-  },
-  {
-    "BookId": 42,
-    "Title": "Head First SQL",
-    "Author": "Lynn Beighley",
-    "PublicationDate": "2007-08-28T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Friendly visual guide to learning SQL queries, joins, and database design basics."
-  },
-  {
-    "BookId": 43,
-    "Title": "JavaScript: The Good Parts",
-    "Author": "Douglas Crockford",
-    "PublicationDate": "2008-05-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Focuses on the most reliable and elegant features of JavaScript for building robust code."
-  },
-  {
-    "BookId": 44,
-    "Title": "Eloquent JavaScript",
-    "Author": "Marijn Haverbeke",
-    "PublicationDate": "2010-12-14T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Modern introduction to JavaScript and web programming with exercises and projects."
-  },
-  {
-    "BookId": 45,
-    "Title": "You Don't Know JS: Async & Performance",
-    "Author": "Kyle Simpson",
-    "PublicationDate": "2015-12-27T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains asynchronous patterns and performance tuning in JavaScript."
-  },
-  {
-    "BookId": 46,
-    "Title": "Learning React",
-    "Author": "Alex Banks",
-    "PublicationDate": "2017-05-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Introduces modern React concepts like components, hooks, and state management."
-  },
-  {
-    "BookId": 47,
-    "Title": "You Don't Know JS: ES6 & Beyond",
-    "Author": "Kyle Simpson",
-    "PublicationDate": "2015-12-27T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Covers new JavaScript language features from ES6 and later editions."
-  },
-  {
-    "BookId": 48,
-    "Title": "Pro ASP.NET Core MVC",
-    "Author": "Adam Freeman",
-    "PublicationDate": "2016-09-15T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Step-by-step guide to building web applications with ASP.NET Core MVC."
-  },
-  {
-    "BookId": 49,
-    "Title": "Pro WPF in C#",
-    "Author": "Matthew MacDonald",
-    "PublicationDate": "2012-06-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Covers building rich desktop applications using WPF, XAML, and C#."
-  },
-  {
-    "BookId": 50,
-    "Title": "Windows Presentation Foundation Unleashed",
-    "Author": "Adam Nathan",
-    "PublicationDate": "2006-11-11T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Hands-on guide to creating UI with WPF, including layout, controls, and data binding."
-  },
-  {
-    "BookId": 51,
-    "Title": "Head First HTML and CSS",
-    "Author": "Elisabeth Robson",
-    "PublicationDate": "2005-12-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Friendly visual guide to building web pages with HTML and CSS from scratch."
-  },
-  {
-    "BookId": 52,
-    "Title": "CSS: The Definitive Guide",
-    "Author": "Eric A. Meyer",
-    "PublicationDate": "2000-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Detailed reference to CSS layout, selectors, and advanced styling techniques."
-  },
-  {
-    "BookId": 53,
-    "Title": "Don't Make Me Think",
-    "Author": "Steve Krug",
-    "PublicationDate": "2000-08-05T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Short, practical guide to web usability and simple user-centered design."
-  },
-  {
-    "BookId": 54,
-    "Title": "The Design of Everyday Things",
-    "Author": "Don Norman",
-    "PublicationDate": "1988-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explores how design choices help or hinder users, with examples from daily objects."
-  },
-  {
-    "BookId": 55,
-    "Title": "About Face: The Essentials of Interaction Design",
-    "Author": "Alan Cooper",
-    "PublicationDate": "2003-08-15T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Comprehensive look at interaction design patterns and user-centered interfaces."
-  },
-  {
-    "BookId": 56,
-    "Title": "Lean UX",
-    "Author": "Jeff Gothelf",
-    "PublicationDate": "2013-03-15T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Shows how to integrate UX design into agile teams with experiments and feedback."
-  },
-  {
-    "BookId": 57,
-    "Title": "Refactoring UI",
-    "Author": "Adam Wathan",
-    "PublicationDate": "2018-11-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Practical visual design tips for developers who want better-looking interfaces."
-  },
-  {
-    "BookId": 58,
-    "Title": "The Manager's Path",
-    "Author": "Camille Fournier",
-    "PublicationDate": "2017-02-28T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explores roles from tech lead to CTO and how to grow as an engineering leader."
-  },
-  {
-    "BookId": 59,
-    "Title": "Peopleware",
-    "Author": "Tom DeMarco",
-    "PublicationDate": "1987-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Discusses the human side of software projects, focusing on teams and work environments."
-  },
-  {
-    "BookId": 60,
-    "Title": "Team Topologies",
-    "Author": "Matthew Skelton",
-    "PublicationDate": "2019-09-17T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Describes patterns for organizing software teams for fast flow and clear ownership."
-  },
-  {
-    "BookId": 61,
-    "Title": "Code: The Hidden Language of Computer Hardware and Software",
-    "Author": "Charles Petzold",
-    "PublicationDate": "1999-10-11T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains how computers work from basics like electricity up to operating systems."
-  },
-  {
-    "BookId": 62,
-    "Title": "Grokking Algorithms",
-    "Author": "Aditya Bhargava",
-    "PublicationDate": "2016-05-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Illustrated introduction to common algorithms for beginners using plain language."
-  },
-  {
-    "BookId": 63,
-    "Title": "Head First Design Patterns, 2nd Edition",
-    "Author": "Eric Freeman",
-    "PublicationDate": "2020-12-04T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Updated edition of the visual guide to design patterns using modern examples."
-  },
-  {
-    "BookId": 64,
-    "Title": "C Programming Language",
-    "Author": "Brian W. Kernighan",
-    "PublicationDate": "1978-02-22T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Classic text introducing the C language and structured programming techniques."
-  },
-  {
-    "BookId": 65,
-    "Title": "Programming Pearls",
-    "Author": "Jon Bentley",
-    "PublicationDate": "1986-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Collection of essays on programming problems, data structures, and clever solutions."
-  },
-  {
-    "BookId": 66,
-    "Title": "The Little Schemer",
-    "Author": "Daniel P. Friedman",
-    "PublicationDate": "1974-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Playful introduction to recursion and functional programming using Scheme."
-  },
-  {
-    "BookId": 67,
-    "Title": "Designing Interfaces",
-    "Author": "Jenifer Tidwell",
-    "PublicationDate": "2005-11-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Pattern collection for common user interface problems on desktop and web."
-  },
-  {
-    "BookId": 68,
-    "Title": "Lean Software Development",
-    "Author": "Mary Poppendieck",
-    "PublicationDate": "2003-05-18T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Applies lean manufacturing principles to software development and project management."
-  },
-  {
-    "BookId": 69,
-    "Title": "Agile Estimating and Planning",
-    "Author": "Mike Cohn",
-    "PublicationDate": "2005-12-15T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains how to estimate, plan, and track work in agile projects realistically."
-  },
-  {
-    "BookId": 70,
-    "Title": "Scrum: The Art of Doing Twice the Work in Half the Time",
-    "Author": "Jeff Sutherland",
-    "PublicationDate": "2014-09-30T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Introduction to Scrum with stories about improving productivity and teamwork."
-  },
-  {
-    "BookId": 71,
-    "Title": "The Art of Unit Testing",
-    "Author": "Roy Osherove",
-    "PublicationDate": "2009-05-01T00:00:00",
-    "TotalCopies": 3,
-    "AvailableCopies": 3,
-    "Description": "Shows how to write good unit tests and structure code for testability."
-  },
-  {
-    "BookId": 72,
-    "Title": "xUnit Test Patterns",
-    "Author": "Gerard Meszaros",
-    "PublicationDate": "2007-05-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Comprehensive catalog of patterns for unit tests and test architectures."
-  },
-  {
-    "BookId": 73,
-    "Title": "Continuous Integration",
-    "Author": "Paul M. Duvall",
-    "PublicationDate": "2007-07-09T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explains the practices and tools behind continuous integration in software teams."
-  },
-  {
-    "BookId": 74,
-    "Title": "Release It!",
-    "Author": "Michael T. Nygard",
-    "PublicationDate": "2007-03-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Discusses patterns and pitfalls of real-world production systems and reliability."
-  },
-  {
-    "BookId": 75,
-    "Title": "The Art of Scalability",
-    "Author": "Martin L. Abbott",
-    "PublicationDate": "2009-07-27T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Shows how to scale both software systems and organizations as usage grows."
-  },
-  {
-    "BookId": 76,
-    "Title": "High Performance Browser Networking",
-    "Author": "Ilya Grigorik",
-    "PublicationDate": "2013-09-11T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Explains how browsers use networks and how to optimize web performance."
-  },
-  {
-    "BookId": 77,
-    "Title": "Web Performance in Action",
-    "Author": "Jeremy Wagner",
-    "PublicationDate": "2016-10-03T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Practical techniques to speed up websites, from images to caching and scripts."
-  },
-  {
-    "BookId": 78,
-    "Title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
-    "Author": "Aurélien Géron",
-    "PublicationDate": "2017-03-13T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Practical introduction to machine learning using Python libraries and examples."
-  },
-  {
-    "BookId": 79,
-    "Title": "Deep Learning",
-    "Author": "Ian Goodfellow",
-    "PublicationDate": "2016-11-18T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Textbook covering theory and practice of deep neural networks and representation learning."
-  },
-  {
-    "BookId": 80,
-    "Title": "Grokking Deep Learning",
-    "Author": "Andrew Trask",
-    "PublicationDate": "2017-05-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Friendly introduction to building neural networks from first principles in Python."
-  },
-  {
-    "BookId": 81,
-    "Title": "The Pragmatic Programmer, 20th Anniversary Edition",
-    "Author": "Andrew Hunt",
-    "PublicationDate": "2019-09-13T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Updated edition of the classic book on pragmatic software craftsmanship."
-  },
-  {
-    "BookId": 82,
-    "Title": "Clean Agile",
-    "Author": "Robert C. Martin",
-    "PublicationDate": "2019-09-12T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Explores agile values and practices from the perspective of the Clean Code author."
-  },
-  {
-    "BookId": 83,
-    "Title": "Refactoring to Patterns",
-    "Author": "Joshua Kerievsky",
-    "PublicationDate": "2004-08-02T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Shows how to refactor existing code to introduce classic design patterns safely."
-  },
-  {
-    "BookId": 84,
-    "Title": "Growing Object-Oriented Software, Guided by Tests",
-    "Author": "Steve Freeman",
-    "PublicationDate": "2009-10-12T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Demonstrates building an application incrementally using TDD and good OO design."
-  },
-  {
-    "BookId": 85,
-    "Title": "Working in Public: The Making and Maintenance of Open Source Software",
-    "Author": "Nadia Eghbal",
-    "PublicationDate": "2020-08-04T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Looks at how open source projects are built, maintained, and funded today."
-  },
-  {
-    "BookId": 86,
-    "Title": "Open Source Licensing",
-    "Author": "Andrew M. St. Laurent",
-    "PublicationDate": "2004-08-23T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Explains common open source licenses and what they mean for developers and users."
-  },
-  {
-    "BookId": 87,
-    "Title": "Practical Object-Oriented Design in Ruby",
-    "Author": "Sandi Metz",
-    "PublicationDate": "2012-09-12T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Teaches clean, flexible OO design through Ruby-based examples and refactoring."
-  },
-  {
-    "BookId": 88,
-    "Title": "Ruby on Rails Tutorial",
-    "Author": "Michael Hartl",
-    "PublicationDate": "2010-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Project-based introduction to building web applications with Ruby on Rails."
-  },
-  {
-    "BookId": 89,
-    "Title": "The Go Programming Language",
-    "Author": "Alan A. A. Donovan",
-    "PublicationDate": "2015-11-20T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Comprehensive introduction to Go language syntax, concurrency, and tooling."
-  },
-  {
-    "BookId": 90,
-    "Title": "Programming Rust",
-    "Author": "Jim Blandy",
-    "PublicationDate": "2017-12-21T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Teaches Rust's ownership model, safety guarantees, and systems programming features."
-  },
-  {
-    "BookId": 91,
-    "Title": "Effective C++",
-    "Author": "Scott Meyers",
-    "PublicationDate": "1992-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Collection of guidelines and idioms for writing robust, efficient C++ code."
-  },
-  {
-    "BookId": 92,
-    "Title": "More Effective C++",
-    "Author": "Scott Meyers",
-    "PublicationDate": "1995-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Follow-up volume with additional C++ tips, pitfalls, and advanced topics."
-  },
-  {
-    "BookId": 93,
-    "Title": "The Rust Programming Language",
-    "Author": "Steve Klabnik",
-    "PublicationDate": "2018-07-10T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Official Rust book covering language basics, ownership, and building applications."
-  },
-  {
-    "BookId": 94,
-    "Title": "Practical Vim",
-    "Author": "Drew Neil",
-    "PublicationDate": "2012-09-15T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Tips and workflows for becoming productive with the Vim text editor."
-  },
-  {
-    "BookId": 95,
-    "Title": "Mastering Emacs",
-    "Author": "Mickey Petersen",
-    "PublicationDate": "2015-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Guide to using Emacs effectively as a powerful, extensible development environment."
-  },
-  {
-    "BookId": 96,
-    "Title": "The Unix Programming Environment",
-    "Author": "Brian W. Kernighan",
-    "PublicationDate": "1984-01-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Classic introduction to Unix philosophy, tools, and shell scripting."
-  },
-  {
-    "BookId": 97,
-    "Title": "Site Reliability Engineering",
-    "Author": "Betsy Beyer",
-    "PublicationDate": "2016-03-23T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Describes Google's SRE practices for running reliable, large-scale services."
-  },
-  {
-    "BookId": 98,
-    "Title": "The Site Reliability Workbook",
-    "Author": "Betsy Beyer",
-    "PublicationDate": "2018-08-01T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Companion book with practical case studies and exercises in SRE practices."
-  },
-  {
-    "BookId": 99,
-    "Title": "Chaos Engineering",
-    "Author": "Casey Rosenthal",
-    "PublicationDate": "2020-04-06T00:00:00",
-    "TotalCopies": 1,
-    "AvailableCopies": 1,
-    "Description": "Explains how to experiment on systems to build confidence in their resilience."
-  },
-  {
-    "BookId": 100,
-    "Title": "The Art of Logging",
-    "Author": "Fictional Author",
-    "PublicationDate": "2024-01-01T00:00:00",
-    "TotalCopies": 2,
-    "AvailableCopies": 2,
-    "Description": "Introductory guide to designing useful logs and monitoring behavior in applications."
-  }
+    {
+        "BookId": 1,
+        "Title": "Clean Code",
+        "Author": "Robert C. Martin",
+        "PublicationDate": "2008-08-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Practical advice on writing readable, maintainable code with refactoring examples and coding principles."
+    },
+    {
+        "BookId": 2,
+        "Title": "The Pragmatic Programmer",
+        "Author": "Andrew Hunt",
+        "PublicationDate": "1999-10-30T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 1,
+        "Description": "Guides developers to think pragmatically about coding, design, and career-long craftsmanship."
+    },
+    {
+        "BookId": 3,
+        "Title": "Design Patterns: Elements of Reusable Object-Oriented Software",
+        "Author": "Gang of Four",
+        "PublicationDate": "1994-10-21T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Classic catalog of reusable object-oriented design patterns with examples in C++ and Smalltalk."
+    },
+    {
+        "BookId": 4,
+        "Title": "Introduction to Algorithms",
+        "Author": "Thomas H. Cormen",
+        "PublicationDate": "1990-07-12T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Comprehensive reference on algorithms with theory, proofs, and pseudocode for many core topics."
+    },
+    {
+        "BookId": 5,
+        "Title": "The Mythical Man-Month",
+        "Author": "Frederick P. Brooks Jr.",
+        "PublicationDate": "1975-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Essays on software project management, team communication, and the limits of adding more people."
+    },
+    {
+        "BookId": 6,
+        "Title": "Code Complete",
+        "Author": "Steve McConnell",
+        "PublicationDate": "2004-06-09T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Detailed guide to construction-level coding techniques, style, and quality for large codebases."
+    },
+    {
+        "BookId": 7,
+        "Title": "Refactoring: Improving the Design of Existing Code",
+        "Author": "Martin Fowler",
+        "PublicationDate": "1999-07-08T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Shows step-by-step refactorings to make legacy code cleaner, safer, and easier to extend."
+    },
+    {
+        "BookId": 8,
+        "Title": "Head First Design Patterns",
+        "Author": "Eric Freeman",
+        "PublicationDate": "2004-10-25T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Visual, example-heavy introduction to design patterns for beginners and intermediate coders."
+    },
+    {
+        "BookId": 9,
+        "Title": "You Don't Know JS: Scope & Closures",
+        "Author": "Kyle Simpson",
+        "PublicationDate": "2014-03-27T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Short deep-dive into JavaScript scope, closures, and how the language handles variables."
+    },
+    {
+        "BookId": 10,
+        "Title": "Structure and Interpretation of Computer Programs",
+        "Author": "Harold Abelson",
+        "PublicationDate": "1984-07-25T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Foundational text exploring programming concepts, abstraction, and interpreters with Scheme."
+    },
+    {
+        "BookId": 11,
+        "Title": "The Art of Computer Programming, Vol. 1",
+        "Author": "Donald E. Knuth",
+        "PublicationDate": "1968-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 0,
+        "Description": "Advanced reference on algorithms, mathematical analysis, and fundamental programming techniques."
+    },
+    {
+        "BookId": 12,
+        "Title": "Domain-Driven Design",
+        "Author": "Eric Evans",
+        "PublicationDate": "2003-08-30T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 1,
+        "Description": "Explains how to design complex systems by modeling rich domains with ubiquitous language."
+    },
+    {
+        "BookId": 13,
+        "Title": "Working Effectively with Legacy Code",
+        "Author": "Michael Feathers",
+        "PublicationDate": "2004-09-22T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 1,
+        "Description": "Techniques for adding tests and refactoring legacy systems without breaking existing behavior."
+    },
+    {
+        "BookId": 14,
+        "Title": "Continuous Delivery",
+        "Author": "Jez Humble",
+        "PublicationDate": "2010-07-27T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Describes practices for reliable, frequent software releases through automation and testing."
+    }
+    {
+        "BookId": 15,
+        "Title": "The Clean Coder",
+        "Author": "Robert C. Martin",
+        "PublicationDate": "2011-05-13T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Focuses on professional habits, ethics, and discipline needed to be a responsible developer."
+    },
+    {
+        "BookId": 16,
+        "Title": "Cracking the Coding Interview",
+        "Author": "Gayle Laakmann McDowell",
+        "PublicationDate": "2015-07-01T00:00:00",
+        "TotalCopies": 4,
+        "AvailableCopies": 4,
+        "Description": "Interview preparation book with coding questions, solutions, and tips for technical interviews."
+    },
+    {
+        "BookId": 17,
+        "Title": "Algorithms, Part I",
+        "Author": "Robert Sedgewick",
+        "PublicationDate": "2011-02-06T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Introduction to data structures and elementary algorithms with an emphasis on Java code."
+    },
+    {
+        "BookId": 18,
+        "Title": "C# in Depth",
+        "Author": "Jon Skeet",
+        "PublicationDate": "2019-03-05T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Explores advanced C# language features and how to use them effectively in real projects."
+    },
+    {
+        "BookId": 19,
+        "Title": "Pro C# 10 with .NET 6",
+        "Author": "Andrew Troelsen",
+        "PublicationDate": "2022-01-11T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Comprehensive guide to modern C# and .NET 6, covering language, libraries, and application types."
+    },
+    {
+        "BookId": 20,
+        "Title": "Agile Principles, Patterns, and Practices in C#",
+        "Author": "Robert C. Martin",
+        "PublicationDate": "2006-07-20T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Applies agile principles and design patterns to C# projects with case studies and examples."
+    },
+    {
+        "BookId": 21,
+        "Title": "Head First Java",
+        "Author": "Kathy Sierra",
+        "PublicationDate": "2003-02-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Beginner-friendly introduction to Java using visual explanations and practical exercises."
+    },
+    {
+        "BookId": 22,
+        "Title": "Effective Java",
+        "Author": "Joshua Bloch",
+        "PublicationDate": "2001-05-08T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Collection of best practices and design tips for writing robust, efficient Java code."
+    },
+    {
+        "BookId": 23,
+        "Title": "Java Concurrency in Practice",
+        "Author": "Brian Goetz",
+        "PublicationDate": "2006-05-19T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Deep dive into building correct and performant concurrent programs in Java."
+    },
+    {
+        "BookId": 24,
+        "Title": "Patterns of Enterprise Application Architecture",
+        "Author": "Martin Fowler",
+        "PublicationDate": "2002-11-15T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Catalog of patterns for building large-scale enterprise systems with layered architectures."
+    },
+    {
+        "BookId": 25,
+        "Title": "Test-Driven Development: By Example",
+        "Author": "Kent Beck",
+        "PublicationDate": "2002-11-08T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Introduces TDD through simple examples, showing how tests drive design and refactoring."
+    },
+    {
+        "BookId": 26,
+        "Title": "Extreme Programming Explained",
+        "Author": "Kent Beck",
+        "PublicationDate": "1999-10-18T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Describes Extreme Programming values and practices for small, agile development teams."
+    },
+    {
+        "BookId": 27,
+        "Title": "The Phoenix Project",
+        "Author": "Gene Kim",
+        "PublicationDate": "2013-01-10T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Novel about IT operations, DevOps, and improving flow in a struggling company."
+    },
+    {
+        "BookId": 28,
+        "Title": "The DevOps Handbook",
+        "Author": "Gene Kim",
+        "PublicationDate": "2016-10-06T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Practical guide to implementing DevOps practices for faster, safer software delivery."
+    },
+    {
+        "BookId": 29,
+        "Title": "Soft Skills: The Software Developer's Life Manual",
+        "Author": "John Sonmez",
+        "PublicationDate": "2014-12-29T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Covers career, productivity, learning, and life skills for software developers."
+    },
+    {
+        "BookId": 30,
+        "Title": "The Linux Programming Interface",
+        "Author": "Michael Kerrisk",
+        "PublicationDate": "2010-10-28T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Detailed reference to Linux system calls, APIs, and low-level programming concepts."
+    },
+    {
+        "BookId": 31,
+        "Title": "Operating System Concepts",
+        "Author": "Abraham Silberschatz",
+        "PublicationDate": "1982-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Standard textbook covering processes, memory, file systems, and OS design principles."
+    },
+    {
+        "BookId": 32,
+        "Title": "Computer Networks",
+        "Author": "Andrew S. Tanenbaum",
+        "PublicationDate": "1981-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains networking concepts from physical layer up to applications with clear diagrams."
+    },
+    {
+        "BookId": 33,
+        "Title": "Compilers: Principles, Techniques, and Tools",
+        "Author": "Alfred V. Aho",
+        "PublicationDate": "1986-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Known as the Dragon Book, covers theory and practice of compiler design and implementation."
+    },
+    {
+        "BookId": 34,
+        "Title": "Clean Architecture",
+        "Author": "Robert C. Martin",
+        "PublicationDate": "2017-09-20T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Guides architects on separating concerns and designing systems with clear boundaries."
+    },
+    {
+        "BookId": 35,
+        "Title": "The Linux Command Line",
+        "Author": "William E. Shotts Jr.",
+        "PublicationDate": "2012-01-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Beginner-friendly introduction to Linux shell usage and scripting with practical examples."
+    },
+    {
+        "BookId": 36,
+        "Title": "Python Crash Course",
+        "Author": "Eric Matthes",
+        "PublicationDate": "2015-11-01T00:00:00",
+        "TotalCopies": 4,
+        "AvailableCopies": 4,
+        "Description": "Hands-on introduction to Python with exercises and small projects for beginners."
+    },
+    {
+        "BookId": 37,
+        "Title": "Fluent Python",
+        "Author": "Luciano Ramalho",
+        "PublicationDate": "2015-08-20T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explores advanced Python features and idioms to write clear, powerful Pythonic code."
+    },
+    {
+        "BookId": 38,
+        "Title": "Automate the Boring Stuff with Python",
+        "Author": "Al Sweigart",
+        "PublicationDate": "2015-04-14T00:00:00",
+        "TotalCopies": 4,
+        "AvailableCopies": 4,
+        "Description": "Shows how to use Python scripts to automate everyday tasks like files, Excel, and web data."
+    },
+    {
+        "BookId": 39,
+        "Title": "Designing Data-Intensive Applications",
+        "Author": "Martin Kleppmann",
+        "PublicationDate": "2017-03-16T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains the principles behind scalable, reliable data systems and modern storage technologies."
+    },
+    {
+        "BookId": 40,
+        "Title": "SQL Antipatterns",
+        "Author": "Bill Karwin",
+        "PublicationDate": "2010-07-12T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Shows common database design and query mistakes and how to fix them for better SQL."
+    },
+    {
+        "BookId": 41,
+        "Title": "Seven Databases in Seven Weeks",
+        "Author": "Eric Redmond",
+        "PublicationDate": "2012-05-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Tours different database models, from relational to NoSQL, with practical examples."
+    },
+    {
+        "BookId": 42,
+        "Title": "Head First SQL",
+        "Author": "Lynn Beighley",
+        "PublicationDate": "2007-08-28T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Friendly visual guide to learning SQL queries, joins, and database design basics."
+    },
+    {
+        "BookId": 43,
+        "Title": "JavaScript: The Good Parts",
+        "Author": "Douglas Crockford",
+        "PublicationDate": "2008-05-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Focuses on the most reliable and elegant features of JavaScript for building robust code."
+    },
+    {
+        "BookId": 44,
+        "Title": "Eloquent JavaScript",
+        "Author": "Marijn Haverbeke",
+        "PublicationDate": "2010-12-14T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Modern introduction to JavaScript and web programming with exercises and projects."
+    },
+    {
+        "BookId": 45,
+        "Title": "You Don't Know JS: Async & Performance",
+        "Author": "Kyle Simpson",
+        "PublicationDate": "2015-12-27T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains asynchronous patterns and performance tuning in JavaScript."
+    },
+    {
+        "BookId": 46,
+        "Title": "Learning React",
+        "Author": "Alex Banks",
+        "PublicationDate": "2017-05-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Introduces modern React concepts like components, hooks, and state management."
+    },
+    {
+        "BookId": 47,
+        "Title": "You Don't Know JS: ES6 & Beyond",
+        "Author": "Kyle Simpson",
+        "PublicationDate": "2015-12-27T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Covers new JavaScript language features from ES6 and later editions."
+    },
+    {
+        "BookId": 48,
+        "Title": "Pro ASP.NET Core MVC",
+        "Author": "Adam Freeman",
+        "PublicationDate": "2016-09-15T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Step-by-step guide to building web applications with ASP.NET Core MVC."
+    },
+    {
+        "BookId": 49,
+        "Title": "Pro WPF in C#",
+        "Author": "Matthew MacDonald",
+        "PublicationDate": "2012-06-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Covers building rich desktop applications using WPF, XAML, and C#."
+    },
+    {
+        "BookId": 50,
+        "Title": "Windows Presentation Foundation Unleashed",
+        "Author": "Adam Nathan",
+        "PublicationDate": "2006-11-11T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Hands-on guide to creating UI with WPF, including layout, controls, and data binding."
+    },
+    {
+        "BookId": 51,
+        "Title": "Head First HTML and CSS",
+        "Author": "Elisabeth Robson",
+        "PublicationDate": "2005-12-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Friendly visual guide to building web pages with HTML and CSS from scratch."
+    },
+    {
+        "BookId": 52,
+        "Title": "CSS: The Definitive Guide",
+        "Author": "Eric A. Meyer",
+        "PublicationDate": "2000-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Detailed reference to CSS layout, selectors, and advanced styling techniques."
+    },
+    {
+        "BookId": 53,
+        "Title": "Don't Make Me Think",
+        "Author": "Steve Krug",
+        "PublicationDate": "2000-08-05T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Short, practical guide to web usability and simple user-centered design."
+    },
+    {
+        "BookId": 54,
+        "Title": "The Design of Everyday Things",
+        "Author": "Don Norman",
+        "PublicationDate": "1988-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explores how design choices help or hinder users, with examples from daily objects."
+    },
+    {
+        "BookId": 55,
+        "Title": "About Face: The Essentials of Interaction Design",
+        "Author": "Alan Cooper",
+        "PublicationDate": "2003-08-15T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Comprehensive look at interaction design patterns and user-centered interfaces."
+    },
+    {
+        "BookId": 56,
+        "Title": "Lean UX",
+        "Author": "Jeff Gothelf",
+        "PublicationDate": "2013-03-15T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Shows how to integrate UX design into agile teams with experiments and feedback."
+    },
+    {
+        "BookId": 57,
+        "Title": "Refactoring UI",
+        "Author": "Adam Wathan",
+        "PublicationDate": "2018-11-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Practical visual design tips for developers who want better-looking interfaces."
+    },
+    {
+        "BookId": 58,
+        "Title": "The Manager's Path",
+        "Author": "Camille Fournier",
+        "PublicationDate": "2017-02-28T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explores roles from tech lead to CTO and how to grow as an engineering leader."
+    },
+    {
+        "BookId": 59,
+        "Title": "Peopleware",
+        "Author": "Tom DeMarco",
+        "PublicationDate": "1987-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Discusses the human side of software projects, focusing on teams and work environments."
+    },
+    {
+        "BookId": 60,
+        "Title": "Team Topologies",
+        "Author": "Matthew Skelton",
+        "PublicationDate": "2019-09-17T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Describes patterns for organizing software teams for fast flow and clear ownership."
+    },
+    {
+        "BookId": 61,
+        "Title": "Code: The Hidden Language of Computer Hardware and Software",
+        "Author": "Charles Petzold",
+        "PublicationDate": "1999-10-11T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains how computers work from basics like electricity up to operating systems."
+    },
+    {
+        "BookId": 62,
+        "Title": "Grokking Algorithms",
+        "Author": "Aditya Bhargava",
+        "PublicationDate": "2016-05-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Illustrated introduction to common algorithms for beginners using plain language."
+    },
+    {
+        "BookId": 63,
+        "Title": "Head First Design Patterns, 2nd Edition",
+        "Author": "Eric Freeman",
+        "PublicationDate": "2020-12-04T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Updated edition of the visual guide to design patterns using modern examples."
+    },
+    {
+        "BookId": 64,
+        "Title": "C Programming Language",
+        "Author": "Brian W. Kernighan",
+        "PublicationDate": "1978-02-22T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Classic text introducing the C language and structured programming techniques."
+    },
+    {
+        "BookId": 65,
+        "Title": "Programming Pearls",
+        "Author": "Jon Bentley",
+        "PublicationDate": "1986-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Collection of essays on programming problems, data structures, and clever solutions."
+    },
+    {
+        "BookId": 66,
+        "Title": "The Little Schemer",
+        "Author": "Daniel P. Friedman",
+        "PublicationDate": "1974-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Playful introduction to recursion and functional programming using Scheme."
+    },
+    {
+        "BookId": 67,
+        "Title": "Designing Interfaces",
+        "Author": "Jenifer Tidwell",
+        "PublicationDate": "2005-11-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Pattern collection for common user interface problems on desktop and web."
+    },
+    {
+        "BookId": 68,
+        "Title": "Lean Software Development",
+        "Author": "Mary Poppendieck",
+        "PublicationDate": "2003-05-18T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Applies lean manufacturing principles to software development and project management."
+    },
+    {
+        "BookId": 69,
+        "Title": "Agile Estimating and Planning",
+        "Author": "Mike Cohn",
+        "PublicationDate": "2005-12-15T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains how to estimate, plan, and track work in agile projects realistically."
+    },
+    {
+        "BookId": 70,
+        "Title": "Scrum: The Art of Doing Twice the Work in Half the Time",
+        "Author": "Jeff Sutherland",
+        "PublicationDate": "2014-09-30T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Introduction to Scrum with stories about improving productivity and teamwork."
+    },
+    {
+        "BookId": 71,
+        "Title": "The Art of Unit Testing",
+        "Author": "Roy Osherove",
+        "PublicationDate": "2009-05-01T00:00:00",
+        "TotalCopies": 3,
+        "AvailableCopies": 3,
+        "Description": "Shows how to write good unit tests and structure code for testability."
+    },
+    {
+        "BookId": 72,
+        "Title": "xUnit Test Patterns",
+        "Author": "Gerard Meszaros",
+        "PublicationDate": "2007-05-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Comprehensive catalog of patterns for unit tests and test architectures."
+    },
+    {
+        "BookId": 73,
+        "Title": "Continuous Integration",
+        "Author": "Paul M. Duvall",
+        "PublicationDate": "2007-07-09T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explains the practices and tools behind continuous integration in software teams."
+    },
+    {
+        "BookId": 74,
+        "Title": "Release It!",
+        "Author": "Michael T. Nygard",
+        "PublicationDate": "2007-03-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Discusses patterns and pitfalls of real-world production systems and reliability."
+    },
+    {
+        "BookId": 75,
+        "Title": "The Art of Scalability",
+        "Author": "Martin L. Abbott",
+        "PublicationDate": "2009-07-27T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Shows how to scale both software systems and organizations as usage grows."
+    },
+    {
+        "BookId": 76,
+        "Title": "High Performance Browser Networking",
+        "Author": "Ilya Grigorik",
+        "PublicationDate": "2013-09-11T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Explains how browsers use networks and how to optimize web performance."
+    },
+    {
+        "BookId": 77,
+        "Title": "Web Performance in Action",
+        "Author": "Jeremy Wagner",
+        "PublicationDate": "2016-10-03T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Practical techniques to speed up websites, from images to caching and scripts."
+    },
+    {
+        "BookId": 78,
+        "Title": "Hands-On Machine Learning with Scikit-Learn and TensorFlow",
+        "Author": "Aurélien Géron",
+        "PublicationDate": "2017-03-13T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Practical introduction to machine learning using Python libraries and examples."
+    },
+    {
+        "BookId": 79,
+        "Title": "Deep Learning",
+        "Author": "Ian Goodfellow",
+        "PublicationDate": "2016-11-18T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Textbook covering theory and practice of deep neural networks and representation learning."
+    },
+    {
+        "BookId": 80,
+        "Title": "Grokking Deep Learning",
+        "Author": "Andrew Trask",
+        "PublicationDate": "2017-05-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Friendly introduction to building neural networks from first principles in Python."
+    },
+    {
+        "BookId": 81,
+        "Title": "The Pragmatic Programmer, 20th Anniversary Edition",
+        "Author": "Andrew Hunt",
+        "PublicationDate": "2019-09-13T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Updated edition of the classic book on pragmatic software craftsmanship."
+    },
+    {
+        "BookId": 82,
+        "Title": "Clean Agile",
+        "Author": "Robert C. Martin",
+        "PublicationDate": "2019-09-12T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Explores agile values and practices from the perspective of the Clean Code author."
+    },
+    {
+        "BookId": 83,
+        "Title": "Refactoring to Patterns",
+        "Author": "Joshua Kerievsky",
+        "PublicationDate": "2004-08-02T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Shows how to refactor existing code to introduce classic design patterns safely."
+    },
+    {
+        "BookId": 84,
+        "Title": "Growing Object-Oriented Software, Guided by Tests",
+        "Author": "Steve Freeman",
+        "PublicationDate": "2009-10-12T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Demonstrates building an application incrementally using TDD and good OO design."
+    },
+    {
+        "BookId": 85,
+        "Title": "Working in Public: The Making and Maintenance of Open Source Software",
+        "Author": "Nadia Eghbal",
+        "PublicationDate": "2020-08-04T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Looks at how open source projects are built, maintained, and funded today."
+    },
+    {
+        "BookId": 86,
+        "Title": "Open Source Licensing",
+        "Author": "Andrew M. St. Laurent",
+        "PublicationDate": "2004-08-23T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Explains common open source licenses and what they mean for developers and users."
+    },
+    {
+        "BookId": 87,
+        "Title": "Practical Object-Oriented Design in Ruby",
+        "Author": "Sandi Metz",
+        "PublicationDate": "2012-09-12T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Teaches clean, flexible OO design through Ruby-based examples and refactoring."
+    },
+    {
+        "BookId": 88,
+        "Title": "Ruby on Rails Tutorial",
+        "Author": "Michael Hartl",
+        "PublicationDate": "2010-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Project-based introduction to building web applications with Ruby on Rails."
+    },
+    {
+        "BookId": 89,
+        "Title": "The Go Programming Language",
+        "Author": "Alan A. A. Donovan",
+        "PublicationDate": "2015-11-20T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Comprehensive introduction to Go language syntax, concurrency, and tooling."
+    },
+    {
+        "BookId": 90,
+        "Title": "Programming Rust",
+        "Author": "Jim Blandy",
+        "PublicationDate": "2017-12-21T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Teaches Rust's ownership model, safety guarantees, and systems programming features."
+    },
+    {
+        "BookId": 91,
+        "Title": "Effective C++",
+        "Author": "Scott Meyers",
+        "PublicationDate": "1992-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Collection of guidelines and idioms for writing robust, efficient C++ code."
+    },
+    {
+        "BookId": 92,
+        "Title": "More Effective C++",
+        "Author": "Scott Meyers",
+        "PublicationDate": "1995-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Follow-up volume with additional C++ tips, pitfalls, and advanced topics."
+    },
+    {
+        "BookId": 93,
+        "Title": "The Rust Programming Language",
+        "Author": "Steve Klabnik",
+        "PublicationDate": "2018-07-10T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Official Rust book covering language basics, ownership, and building applications."
+    },
+    {
+        "BookId": 94,
+        "Title": "Practical Vim",
+        "Author": "Drew Neil",
+        "PublicationDate": "2012-09-15T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Tips and workflows for becoming productive with the Vim text editor."
+    },
+    {
+        "BookId": 95,
+        "Title": "Mastering Emacs",
+        "Author": "Mickey Petersen",
+        "PublicationDate": "2015-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Guide to using Emacs effectively as a powerful, extensible development environment."
+    },
+    {
+        "BookId": 96,
+        "Title": "The Unix Programming Environment",
+        "Author": "Brian W. Kernighan",
+        "PublicationDate": "1984-01-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Classic introduction to Unix philosophy, tools, and shell scripting."
+    },
+    {
+        "BookId": 97,
+        "Title": "Site Reliability Engineering",
+        "Author": "Betsy Beyer",
+        "PublicationDate": "2016-03-23T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Describes Google's SRE practices for running reliable, large-scale services."
+    },
+    {
+        "BookId": 98,
+        "Title": "The Site Reliability Workbook",
+        "Author": "Betsy Beyer",
+        "PublicationDate": "2018-08-01T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Companion book with practical case studies and exercises in SRE practices."
+    },
+    {
+        "BookId": 99,
+        "Title": "Chaos Engineering",
+        "Author": "Casey Rosenthal",
+        "PublicationDate": "2020-04-06T00:00:00",
+        "TotalCopies": 1,
+        "AvailableCopies": 1,
+        "Description": "Explains how to experiment on systems to build confidence in their resilience."
+    },
+    {
+        "BookId": 100,
+        "Title": "The Art of Logging",
+        "Author": "Fictional Author",
+        "PublicationDate": "2024-01-01T00:00:00",
+        "TotalCopies": 2,
+        "AvailableCopies": 2,
+        "Description": "Introductory guide to designing useful logs and monitoring behavior in applications."
+    }
 ]

@@ -6,40 +6,42 @@ public class LibrarySystem
 {
     private readonly FileStorageService _storageService;
 
-    public List<Book> Books { get; set; }
-    public List<Member> Members { get; set; }
-    private readonly string membersFile = "Data/members.json";
-    public List<Loan> Loans { get; set; }
-    public List<Reservation> Reservations { get; set; }
+    private readonly string _booksFile = "Data/books.json";
+    private readonly string _membersFile = "Data/members.json";
+    private readonly string _loansFile = "Data/loans.json";
+    private readonly string _reservationsFile = "Data/reservations.json";
 
-    private readonly string booksFile = "Data/books.json";
-    private readonly string usersFile = "Data/users.json";
-    private readonly string loansFile = "Data/loans.json";
-    private readonly string reservationsFile = "Data/reservations.json";
+    public List<Book> Books { get; private set; }
+    public List<Member> Members { get; private set; }
+    public List<Loan> Loans { get; private set; }
+    public List<Reservation> Reservations { get; private set; }
 
     public ReservationService ReservationsManager { get; }
 
     public LibrarySystem()
     {
         _storageService = new FileStorageService();
-        Books = _storageService.LoadData<Book>(booksFile);
-        Members = _storageService.LoadData<Member>(membersFile);
-        Loans = _storageService.LoadData<Loan>(loansFile);
-        Reservations = _storageService.LoadData<Reservation>(reservationsFile);
+        Books = _storageService.LoadData<Book>(_booksFile);
+        Members = _storageService.LoadData<Member>(_membersFile);
+        Loans = _storageService.LoadData<Loan>(_loansFile);
+        Reservations = _storageService.LoadData<Reservation>(_reservationsFile);
 
+        // FIX 1: Loans was being passed in place of Reservations, args were shifted.
+        // FIX 2: ReservationService now receives Loans so it can check active loan counts.
         ReservationsManager = new ReservationService(
             Books,
             Members,
+            Loans,
             Reservations,
             SaveAllData);
     }
 
     public void SaveAllData()
     {
-        _storageService.SaveData(booksFile, Books);
-        _storageService.SaveData(membersFile, Members);
-        _storageService.SaveData(loansFile, Loans);
-        _storageService.SaveData(reservationsFile, Reservations);
+        _storageService.SaveData(_booksFile, Books);
+        _storageService.SaveData(_membersFile, Members);
+        _storageService.SaveData(_loansFile, Loans);
+        _storageService.SaveData(_reservationsFile, Reservations);
     }
 
     public List<Book> SearchBooks(string query)
@@ -64,7 +66,6 @@ public class LibrarySystem
         }
 
         Console.WriteLine("\n==== All Books ====\n");
-
         foreach (var book in Books)
         {
             Console.WriteLine($"Book ID: {book.BookId}");
@@ -82,11 +83,8 @@ public class LibrarySystem
         var book = Books.FirstOrDefault(b => b.BookId == bookId);
         var member = Members.FirstOrDefault(m => m.MemberId == memberId);
 
-        if (book == null)
-            return "Book not found.";
-
-        if (member == null)
-            return "Member not found.";
+        if (book == null) return "Book not found.";
+        if (member == null) return "Member not found.";
 
         if (!member.CanBorrowMore(Loans))
             return "Member cannot borrow more than three books at a time.";
@@ -102,14 +100,12 @@ public class LibrarySystem
         if (hasOverdueLoan)
             return "Member must return overdue books before borrowing another one.";
 
-        bool borrowed = book.BorrowCopy();
-
-        if (!borrowed)
+        if (!book.BorrowCopy())
             return "Borrowing failed.";
 
         int nextLoanId = Loans.Count == 0 ? 1 : Loans.Max(l => l.LoanId) + 1;
 
-        Loan newLoan = new Loan
+        Loans.Add(new Loan
         {
             LoanId = nextLoanId,
             BookId = bookId,
@@ -117,38 +113,50 @@ public class LibrarySystem
             BorrowDate = DateTime.Now.Date,
             DueDate = DateTime.Now.Date.AddDays(14),
             Returned = false
-        };
+        });
 
-        Loans.Add(newLoan);
         SaveAllData();
-
-        return $"Book borrowed successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
+        return $"Book borrowed successfully. Due date: {Loans.Last().DueDate:dd/MM/yyyy}";
     }
 
-    public void ReturnLoan(Loan loan)
+    // FIX 3: ReturnLoan now accepts loanId instead of Loan object.
+    // This allows the method to find the loan in the Loans list and update it.
+    public string ReturnLoan(int loanId)
     {
-        if (loan == null) return;
+        var loan = Loans.FirstOrDefault(l => l.LoanId == loanId);
+        if (loan == null) return "Loan not found.";
+        if (loan.Returned) return "This loan has already been returned.";
+
+        var book = Books.FirstOrDefault(b => b.BookId == loan.BookId);
+        if (book == null) return "Associated book not found.";
 
         loan.Returned = true;
-        // If you track return date:
-        // loan.ReturnDate = DateTime.Now;
+
+        var nextReservation = ReservationsManager.GetNextReservedInQueue(book.BookId);
+        if (nextReservation != null)
+        {
+            nextReservation.MarkAvailableToCollect();
+            SaveAllData();
+            return "Book returned successfully. The next reservation is now available to collect.";
+        }
+
+        if (!book.ReturnCopy())
+            return "Book returned, but available copies could not be updated.";
+
+        SaveAllData();
+        return "Book returned successfully.";
     }
 
-    // FIX 1: Changed `group.Key` to `memberId`, and renamed `user` to `member`
     public void ViewBorrowedBooksByMember(int memberId)
     {
         var member = Members.FirstOrDefault(m => m.MemberId == memberId);
-
         if (member == null)
         {
             Console.WriteLine("Member not found.");
             return;
         }
 
-        var memberLoans = Loans
-            .Where(l => l.MemberId == memberId && !l.Returned)
-            .ToList();
-
+        var memberLoans = Loans.Where(l => l.MemberId == memberId && !l.Returned).ToList();
         if (memberLoans.Count == 0)
         {
             Console.WriteLine("This member has no borrowed books.");
@@ -156,11 +164,9 @@ public class LibrarySystem
         }
 
         Console.WriteLine($"\n==== Borrowed Books for {member.FirstName} {member.LastName} ====\n");
-
         foreach (var loan in memberLoans)
         {
             var book = Books.FirstOrDefault(b => b.BookId == loan.BookId);
-
             Console.WriteLine($"Loan ID: {loan.LoanId}");
             Console.WriteLine($"Book Title: {book?.Title ?? "Unknown Book"}");
             Console.WriteLine($"Author: {book?.Author ?? "Unknown Author"}");
@@ -171,12 +177,9 @@ public class LibrarySystem
         }
     }
 
-
-    // FIX 3: Renamed `user` to `member`, and fixed closing brace so ListUsersWithBorrowedBooks is no longer nested inside
     public void ListAllLoans()
     {
         var activeLoans = Loans.Where(l => !l.Returned).ToList();
-
         if (activeLoans.Count == 0)
         {
             Console.WriteLine("No active loans found.");
@@ -184,7 +187,6 @@ public class LibrarySystem
         }
 
         Console.WriteLine("\n==== All Active Loans ====\n");
-
         foreach (var loan in activeLoans)
         {
             var book = Books.FirstOrDefault(b => b.BookId == loan.BookId);
@@ -199,22 +201,25 @@ public class LibrarySystem
         }
     }
 
-    // FIX 4: Changed `Users` to `Members`
+    // FIX 4: Completed the missing loop body.
     public void ListUsersWithBorrowedBooks()
     {
         var activeLoans = Loans.Where(l => !l.Returned).ToList();
-
         if (activeLoans.Count == 0)
         {
             Console.WriteLine("No users currently have borrowed books.");
             return;
         }
 
-        var groupedLoans = activeLoans.GroupBy(l => l.MemberId);
-
         Console.WriteLine("\n==== Users With Borrowed Books ====\n");
+        foreach (var group in activeLoans.GroupBy(l => l.MemberId))
+        {
+            var member = Members.FirstOrDefault(m => m.MemberId == group.Key);
+            Console.WriteLine($"Member: {member?.FirstName} {member?.LastName ?? "Unknown"} (ID: {group.Key})");
+            Console.WriteLine($"Active Loans: {group.Count()}");
+            Console.WriteLine(new string('-', 40));
+        }
     }
-
 
     public class ReservationService
     {
@@ -223,17 +228,21 @@ public class LibrarySystem
 
         private readonly List<Book> _books;
         private readonly List<Member> _members;
+        private readonly List<Loan> _loans;
         private readonly List<Reservation> _reservations;
         private readonly Action _saveAllData;
 
+        // FIX 2: Added List<Loan> so ReserveBook can check active loan counts.
         public ReservationService(
             List<Book> books,
             List<Member> members,
+            List<Loan> loans,
             List<Reservation> reservations,
             Action saveAllData)
         {
             _books = books;
             _members = members;
+            _loans = loans;
             _reservations = reservations;
             _saveAllData = saveAllData;
         }
@@ -241,12 +250,10 @@ public class LibrarySystem
         public string ReserveBook(int memberId, int bookId)
         {
             var book = _books.FirstOrDefault(b => b.BookId == bookId);
-            if (book == null)
-                return "Book not found.";
+            if (book == null) return "Book not found.";
 
-            var member = _members.FirstOrDefault(m => m.UserId == memberId);
-            if (member == null)
-                return "Member not found.";
+            var member = _members.FirstOrDefault(m => m.MemberId == memberId);
+            if (member == null) return "Member not found.";
 
             if (GetActiveReservationCount(memberId) >= MaxActiveReservations)
                 return "Member cannot have more than three active reservations.";
@@ -258,6 +265,13 @@ public class LibrarySystem
 
             if (alreadyReserved)
                 return "This member already has an active reservation for this book.";
+
+            int activeLoans = _loans.Count(l => l.MemberId == memberId && !l.Returned);
+            bool noCopiesAvailable = book.AvailableCopies <= 0;
+            bool memberAtLoanLimit = activeLoans >= 3;
+
+            if (!noCopiesAvailable && !memberAtLoanLimit)
+                return "This book is available to borrow. Reservations are only allowed when no copies are available or the member already has three active loans.";
 
             int nextReservationId = _reservations.Count == 0
                 ? 1
@@ -290,5 +304,55 @@ public class LibrarySystem
         {
             return _reservations.Count(r => r.MemberId == memberId && r.IsActive);
         }
+    }
+
+    public string CollectReservedBook(int memberId, int reservationId)
+    {
+        var reservation = Reservations.FirstOrDefault(r =>
+            r.ReservationId == reservationId &&
+            r.MemberId == memberId);
+
+        if (reservation == null)
+            return "Reservation not found.";
+
+        if (reservation.Status != ReservationStatus.AvailableToCollect)
+            return "This reservation is not ready to collect.";
+
+        var member = Members.FirstOrDefault(m => m.MemberId == memberId);
+        if (member == null)
+            return "Member not found.";
+
+        var book = Books.FirstOrDefault(b => b.BookId == reservation.BookId);
+        if (book == null)
+            return "Book not found.";
+
+        if (!member.CanBorrowMore(Loans))
+            return "Member cannot borrow more than three books at a time.";
+
+        bool hasOverdueLoan = Loans.Any(l =>
+            l.MemberId == memberId &&
+            !l.Returned &&
+            l.IsOverdue());
+
+        if (hasOverdueLoan)
+            return "Member must return overdue books before collecting this book.";
+
+        int nextLoanId = Loans.Count == 0 ? 1 : Loans.Max(l => l.LoanId) + 1;
+
+        var newLoan = new Loan
+        {
+            LoanId = nextLoanId,
+            BookId = reservation.BookId,
+            MemberId = memberId,
+            BorrowDate = DateTime.Now.Date,
+            DueDate = DateTime.Now.Date.AddDays(14),
+            Returned = false
+        };
+
+        Loans.Add(newLoan);
+        reservation.MarkFulfilled();
+        SaveAllData();
+
+        return $"Reserved book collected successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
     }
 }

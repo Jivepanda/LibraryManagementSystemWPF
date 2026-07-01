@@ -9,9 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="64" />
-            <!-- Top bar -->
             <RowDefinition Height="*" />
-            <!-- Content -->
         </Grid.RowDefinitions>
 
         <!-- Top navigation bar -->
@@ -41,19 +39,23 @@
                             Background="#362C78"
                             Foreground="White"
                             BorderThickness="0" />
+
                     <Button Content="Search Books"
                             Padding="16,4"
                             Margin="0,0,16,0"
                             Background="Transparent"
                             Foreground="White"
-                            BorderBrush="Transparent" />
+                            BorderBrush="Transparent"
+                            Click="TopBarSearchBooksButton_Click" />
+
                     <Button Content="Return Book"
                             Padding="16,4"
                             Margin="0,0,16,0"
                             Background="Transparent"
                             Foreground="White"
-                            BorderBrush="Transparent" 
+                            BorderBrush="Transparent"
                             Click="HeaderReturnBookButton_Click"/>
+
                     <Button Content="Logout"
                             Padding="16,4"
                             Margin="0,0,0,0"
@@ -71,9 +73,9 @@
                         BorderBrush="#B8BCEB"
                         BorderThickness="1">
                     <TextBlock x:Name="UserBadgeText"
-                       Text="User:"
-                       Foreground="White"
-                       FontSize="12" />
+                               Text="User:"
+                               Foreground="White"
+                               FontSize="12" />
                 </Border>
             </Grid>
         </Border>
@@ -86,11 +88,11 @@
             <!-- Welcome text -->
             <StackPanel>
                 <TextBlock x:Name="WelcomeText"
-           Text="Welcome back"
-           FontSize="24"
-           FontWeight="Bold"
-           Foreground="#1F2251" />
-                           
+                           Text="Welcome back"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#1F2251" />
+
                 <TextBlock Text="Here's an overview of your library activity"
                            FontSize="14"
                            Margin="0,6,0,0"
@@ -109,7 +111,8 @@
                         BorderThickness="1"
                         Cursor="Hand"
                         Click="SearchBooksButton_Click" />
-                    <Button Content="Return a Book"
+
+                <Button Content="Return a Book"
                         Padding="24,12"
                         Margin="0,0,16,0"
                         Background="#362C78"
@@ -117,7 +120,8 @@
                         BorderBrush="#D0D2E0"
                         BorderThickness="1"
                         Cursor="Hand"
-                        Click="ReturnBookButton_Click"  />
+                        Click="ReturnBookButton_Click" />
+
                 <Button Content="Reserve a Book"
                         Padding="24,12"
                         Margin="0,0,16,0"
@@ -125,7 +129,21 @@
                         Foreground="White"
                         BorderBrush="#D0D2E0"
                         BorderThickness="1"
-                        Cursor="Hand" />
+                        Cursor="Hand"
+                        Click="ReserveBookQuickMenuButton_Click" />
+
+                <Button x:Name="CollectReservedBookQuickMenuButton"
+                        Content="Collect Reserved Book"
+                        Padding="24,12"
+                        Margin="0,0,16,0"
+                        Background="#2F855A"
+                        Foreground="White"
+                        BorderBrush="#D0D2E0"
+                        BorderThickness="1"
+                        Cursor="Hand"
+                        Visibility="Collapsed"
+                        Click="CollectReservedBookQuickMenuButton_Click" />
+
                 <Button Content="View Borrowing History"
                         Padding="24,12"
                         Margin="0,0,0,0"
@@ -138,22 +156,22 @@
 
             <!-- Current Borrowed Books header -->
             <TextBlock x:Name="BorrowedHeader"
-           Text="Current Borrowed Books"
-           FontSize="16"
-           FontWeight="SemiBold"
-           Foreground="#1F2251"
-           Margin="0,24,0,8" />
+                       Text="Current Borrowed Books and Reservations"
+                       FontSize="16"
+                       FontWeight="SemiBold"
+                       Foreground="#1F2251"
+                       Margin="0,24,0,8" />
 
-            <!-- Borrowed books table -->
+            <!-- Borrowed books / reservations table -->
             <DataGrid x:Name="BorrowedBooksGrid"
-          AutoGenerateColumns="False"
-          CanUserAddRows="False"
-          CanUserDeleteRows="False"
-          IsReadOnly="True"
-          HeadersVisibility="Column"
-          GridLinesVisibility="None"
-          RowHeight="40"
-          Margin="0,0,0,0">
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      RowHeight="40"
+                      Margin="0,0,0,0">
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#362C78" />
@@ -164,28 +182,36 @@
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Title"
-                            Binding="{Binding Title}"
-                            Width="*" />
-                    <DataGridTextColumn Header="Due Date"
-                            Binding="{Binding DueDateString}"
-                            Width="200" />
+                                        Binding="{Binding Title}"
+                                        Width="*" />
+
+                    <DataGridTextColumn Header="Date"
+                                        Binding="{Binding DateString}"
+                                        Width="200" />
+
                     <DataGridTextColumn Header="Status"
-                    Binding="{Binding Status}"
-                    Width="150">
+                                        Binding="{Binding Status}"
+                                        Width="180">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
                                 <Setter Property="FontWeight" Value="SemiBold" />
 
                                 <Style.Triggers>
-                                    <!-- Active = green -->
                                     <DataTrigger Binding="{Binding Status}" Value="Active">
                                         <Setter Property="Foreground" Value="#1F9D55" />
                                     </DataTrigger>
 
-                                    <!-- Overdue = red -->
                                     <DataTrigger Binding="{Binding Status}" Value="Overdue">
                                         <Setter Property="Foreground" Value="#E53E3E" />
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Status}" Value="Reserved">
+                                        <Setter Property="Foreground" Value="#B7791F" />
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Status}" Value="Available to Collect">
+                                        <Setter Property="Foreground" Value="#2B6CB0" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>

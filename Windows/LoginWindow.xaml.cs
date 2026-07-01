@@ -11,16 +11,11 @@ public partial class LoginWindow : Window
 {
     private readonly LibrarySystem _librarySystem;
 
-
     public LoginWindow()
-        {
-    
-    InitializeComponent();
-    _librarySystem = new LibrarySystem();
-
-    // TEMP: check how many members were loaded
-   // MessageBox.Show($"Loaded members: {_librarySystem.Members.Count}", "Debug");
-}
+    {
+        InitializeComponent();
+        _librarySystem = new LibrarySystem();
+    }
 
     private void SignInButton_Click(object sender, RoutedEventArgs e)
     {
@@ -42,12 +37,11 @@ public partial class LoginWindow : Window
             return;
         }
 
-        // Only open the user dashboard for non-staff roles
         if (!string.Equals(member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
         {
-            var dashboard = new UserDashboardWindow(member);
+            var dashboard = new UserDashboardWindow(member, _librarySystem);
             dashboard.Show();
-            this.Close();
+            Close();
         }
         else
         {
@@ -55,17 +49,16 @@ public partial class LoginWindow : Window
                 "Login", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
-    
 
-private void MemberIdTextBox_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.Key == Key.Enter)
+    private void MemberIdTextBox_KeyDown(object sender, KeyEventArgs e)
     {
-        // Reuse the same logic as button click
-        SignInButton_Click(SignInButton, new RoutedEventArgs());
+        if (e.Key == Key.Enter)
+        {
+            SignInButton_Click(SignInButton, new RoutedEventArgs());
+        }
     }
-}
-private void RegisterText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+
+    private void RegisterText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         // TODO: open registration window
     }

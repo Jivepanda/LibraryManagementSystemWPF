@@ -21,6 +21,26 @@ namespace PlotTwistLibrary
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            LoadSearchResults();
+        }
+
+        private void ReserveBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchResultsGrid.SelectedItem is not Book selectedBook)
+            {
+                MessageBox.Show("Please select a book to reserve.", "Reserve Book");
+                return;
+            }
+
+            string result = _librarySystem.ReservationsManager
+                .ReserveBook(_member.MemberId, selectedBook.BookId);
+
+            MessageBox.Show(result, "Reserve Book");
+            LoadSearchResults();
+        }
+
+        private void LoadSearchResults()
+        {
             var query = SearchTextBox.Text?.Trim() ?? string.Empty;
             var results = _librarySystem.SearchBooks(query);
             SearchResultsGrid.ItemsSource = results;
@@ -28,16 +48,13 @@ namespace PlotTwistLibrary
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
-            // If this search window was opened by a parent window
-            if (this.Owner != null)
+            if (Owner != null)
             {
-                // Bring the user/staff window back to the front
-                this.Owner.Show();
-                this.Owner.Activate();
+                Owner.Show();
+                Owner.Activate();
             }
 
-            // Close the search window
-            this.Close();
+            Close();
         }
     }
 }
