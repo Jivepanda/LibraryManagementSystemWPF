@@ -105,7 +105,7 @@ public class LibrarySystem
 
         int nextLoanId = Loans.Count == 0 ? 1 : Loans.Max(l => l.LoanId) + 1;
 
-        Loans.Add(new Loan
+        var newLoan = new Loan
         {
             LoanId = nextLoanId,
             BookId = bookId,
@@ -113,40 +113,99 @@ public class LibrarySystem
             BorrowDate = DateTime.Now.Date,
             DueDate = DateTime.Now.Date.AddDays(14),
             Returned = false
-        });
+        };
 
+        Loans.Add(newLoan);
         SaveAllData();
-        return $"Book borrowed successfully. Due date: {Loans.Last().DueDate:dd/MM/yyyy}";
+        return $"Book borrowed successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
     }
 
     // FIX 3: ReturnLoan now accepts loanId instead of Loan object.
     // This allows the method to find the loan in the Loans list and update it.
     public string ReturnLoan(int loanId)
     {
-        var loan = Loans.FirstOrDefault(l => l.LoanId == loanId);
-        if (loan == null) return "Loan not found.";
-        if (loan.Returned) return "This loan has already been returned.";
+        var loan = Loans.FirstOrDefault(l => l.LoanId == loanId && !l.Returned);
+        if (loan == null)
+            return "Loan not found or already returned.";
 
         var book = Books.FirstOrDefault(b => b.BookId == loan.BookId);
-        if (book == null) return "Associated book not found.";
+        if (book == null)
+            return "Book not found.";
 
-        loan.Returned = true;
+        loan.MarkReturned();
 
-        var nextReservation = ReservationsManager.GetNextReservedInQueue(book.BookId);
+        bool returnedToShelf = book.ReturnCopy();
+        if (!returnedToShelf)
+            return "Book return failed because available copies would exceed total copies.";
+
+        var nextReservation = Reservations
+            .Where(r => r.BookId == loan.BookId && r.Status == ReservationStatus.Reserved)
+            .OrderBy(r => r.ReserveDate)
+            .FirstOrDefault();
+
         if (nextReservation != null)
         {
             nextReservation.MarkAvailableToCollect();
             SaveAllData();
-            return "Book returned successfully. The next reservation is now available to collect.";
+            return "Book returned successfully.";
         }
-
-        if (!book.ReturnCopy())
-            return "Book returned, but available copies could not be updated.";
 
         SaveAllData();
         return "Book returned successfully.";
     }
+    public void UpdateReadyToCollectReservationsForMember(int memberId)
+    {
+        var memberReservations = Reservations
+            .Where(r => r.MemberId == memberId && r.Status == ReservationStatus.Reserved)
+            .ToList();
 
+        bool changed = false;
+
+        foreach (var reservation in memberReservations)
+        {
+            var book = Books.FirstOrDefault(b => b.BookId == reservation.BookId);
+            if (book == null || book.AvailableCopies <= 0)
+                continue;
+
+            bool alreadyCollectable = Reservations.Any(r =>
+                r.BookId == reservation.BookId &&
+                r.Status == ReservationStatus.AvailableToCollect);
+
+            if (alreadyCollectable)
+                continue;
+
+            var nextInQueue = Reservations
+                .Where(r => r.BookId == reservation.BookId && r.Status == ReservationStatus.Reserved)
+                .OrderBy(r => r.ReserveDate)
+                .FirstOrDefault();
+
+            if (nextInQueue != null && nextInQueue.ReservationId == reservation.ReservationId)
+            {
+                reservation.MarkAvailableToCollect();
+                changed = true;
+            }
+        }
+
+        if (changed)
+            SaveAllData();
+    }
+    public void RepairReservationAvailability(int bookId)
+    {
+        var book = Books.FirstOrDefault(b => b.BookId == bookId);
+        if (book == null || book.AvailableCopies <= 0)
+            return;
+
+        var nextReservation = Reservations
+            .Where(r => r.BookId == bookId && r.Status == ReservationStatus.Reserved)
+            .OrderBy(r => r.ReserveDate)
+            .FirstOrDefault();
+
+        if (nextReservation != null)
+        {
+            nextReservation.MarkAvailableToCollect();
+            SaveAllData();
+        }
+    }
     public void ViewBorrowedBooksByMember(int memberId)
     {
         var member = Members.FirstOrDefault(m => m.MemberId == memberId);
@@ -314,6 +373,8 @@ public class LibrarySystem
 
         if (reservation == null)
             return "Reservation not found.";
+
+        RepairReservationAvailability(reservation.BookId);
 
         if (reservation.Status != ReservationStatus.AvailableToCollect)
             return "This reservation is not ready to collect.";

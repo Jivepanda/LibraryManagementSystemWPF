@@ -20,6 +20,7 @@ public partial class UserDashboardWindow : Window
 
         _member = member;
         _librarySystem = librarySystem;
+        _librarySystem.UpdateReadyToCollectReservationsForMember(_member.MemberId);
 
         UserBadgeText.Text = $"User: {_member.FirstName}";
         WelcomeText.Text = $"Welcome back, {_member.FirstName} — what adventure are we on today?";
