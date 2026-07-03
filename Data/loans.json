@@ -56,11 +56,20 @@
         "Returned": false
     },
     {
-        "LoanId": 2,
+        "LoanId": 9,
         "BookId": 7,
         "MemberId": 2,
         "BorrowDate": "2026-06-22T00:00:00",
         "DueDate": "2026-07-06T00:00:00",
         "Returned": false
+    },
+    {
+        "LoanId": 8,
+        "BookId": 50,
+        "MemberId": 2,
+        "BorrowDate": "2026-06-15T00:00:00",
+        "DueDate": "2026-06-29T00:00:00",
+        "Returned": false
     }
+    
 ]
