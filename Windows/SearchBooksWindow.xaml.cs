@@ -39,6 +39,23 @@ namespace PlotTwistLibrary
                 RunSearch();
             }
         }
+        private void BorrowBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchResultsGrid.SelectedItem is not Book selectedBook)
+            {
+                MessageBox.Show("Please select a book to borrow.", "Borrow Book",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            string result = _librarySystem.BorrowBook(_member.MemberId, selectedBook.BookId);
+
+            MessageBox.Show(result, "Borrow Book",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+
+            var query = SearchTextBox.Text?.Trim() ?? string.Empty;
+            SearchResultsGrid.ItemsSource = _librarySystem.SearchBooks(query);
+        }
 
         private void ReserveBookButton_Click(object sender, RoutedEventArgs e)
         {

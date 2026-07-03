@@ -13,7 +13,10 @@ namespace LibraryManagementSystem.Helpers
             {
                 Owner = owner
             };
+
+            owner.Hide();
             searchWindow.ShowDialog();
+            owner.Show();
         }
     }
 }

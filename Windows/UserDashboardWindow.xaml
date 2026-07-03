@@ -40,7 +40,7 @@
                             Foreground="White"
                             BorderThickness="0" />
 
-                    <Button Content="Search Books"
+                    <Button Content="Borrow Books"
                             Padding="16,4"
                             Margin="0,0,16,0"
                             Background="Transparent"
@@ -103,6 +103,17 @@
             <!-- Quick Actions -->
             <StackPanel Orientation="Horizontal"
                         Margin="0,24,0,0">
+                
+                <Button Content="Borrow a Book"
+                        Padding="24,12"
+                        Margin="0,0,16,0"
+                        Background="#C29B0C"
+                        Foreground="Black"
+                        BorderBrush="#A67C00"
+                        BorderThickness="1"
+                        Cursor="Hand"
+                        Click="BorrowBookButton_Click" />
+                
                 <Button Content="Search for a Book"
                         Padding="24,12"
                         Margin="0,0,16,0"
@@ -112,6 +123,7 @@
                         BorderThickness="1"
                         Cursor="Hand"
                         Click="SearchBooksButton_Click" />
+                
 
                 <Button Content="Return a Book"
                         Padding="24,12"

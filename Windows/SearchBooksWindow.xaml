@@ -100,16 +100,23 @@
             Foreground="White"
             Click="SearchButton_Click" />
 
-            <Button Content="Reserve Selected"
-            Width="130"
-            Height="32"
-            Background="#6B4FA1"
-            Foreground="White"
-            Click="ReserveBookButton_Click" />
-            </StackPanel>
-            
+            <Button Content="Borrow Selected"
+             Width="130"
+             Height="32"
+             Margin="0,0,8,0"
+             Background="#6B4FA1"
+             Foreground="White"
+             Click="BorrowBookButton_Click" />
 
-            <!-- Results grid -->
+            <Button Content="Reserve Selected"
+                Width="130"
+                Height="32"
+                Background="#6B4FA1"
+                Foreground="White"
+                Click="ReserveBookButton_Click" />
+        </StackPanel>
+
+        <!-- Results grid -->
         <DataGrid x:Name="SearchResultsGrid"
           Grid.Row="2"
           AutoGenerateColumns="False"

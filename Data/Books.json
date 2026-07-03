@@ -5,7 +5,7 @@
         "Author": "Robert C. Martin",
         "PublicationDate": "2008-08-01T00:00:00",
         "TotalCopies": 3,
-        "AvailableCopies": 3,
+        "AvailableCopies": 2,
         "Description": "Practical advice on writing readable, maintainable code with refactoring examples and coding principles."
     },
     {
@@ -95,7 +95,7 @@
         "Author": "Donald E. Knuth",
         "PublicationDate": "1968-01-01T00:00:00",
         "TotalCopies": 1,
-        "AvailableCopies": 0,
+        "AvailableCopies": 1,
         "Description": "Advanced reference on algorithms, mathematical analysis, and fundamental programming techniques."
     },
     {

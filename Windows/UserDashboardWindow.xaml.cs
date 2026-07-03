@@ -77,10 +77,22 @@ public partial class UserDashboardWindow : Window
                 ? Visibility.Visible
                 : Visibility.Collapsed;
     }
-
     private void OpenSearchBooksWindow()
     {
-        WindowHelpers.OpenSearchBooksWindow(this, _librarySystem, _member);
+        var searchWindow = new SearchBooksWindow(_librarySystem, _member)
+        {
+            Owner = this
+        };
+
+        this.Hide();
+        searchWindow.ShowDialog();
+        this.Show();
+
+        LoadBorrowedBooks();
+    }
+    private void BorrowBookButton_Click(object sender, RoutedEventArgs e)
+    {
+        OpenSearchBooksWindow();
     }
 
     private void SearchBooksButton_Click(object sender, RoutedEventArgs e) => OpenSearchBooksWindow();
