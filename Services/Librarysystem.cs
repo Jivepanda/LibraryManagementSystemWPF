@@ -416,4 +416,53 @@ public class LibrarySystem
 
         return $"Reserved book collected successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
     }
+    public Member RegisterMember(string firstName, string lastName, string email, string phone)
+    {
+        return RegisterUser(firstName, lastName, email, phone, "Member");
+    }
+    public Member RegisterUser(string firstName, string lastName, string email, string phone, string role)
+    {
+        return RegisterUserInternal(firstName, lastName, email, phone, role);
+    }
+    private Member RegisterUserInternal(string firstName, string lastName, string email, string phone, string role)
+    {
+        firstName = firstName.Trim();
+        lastName = lastName.Trim();
+        email = email.Trim();
+        phone = phone.Trim();
+        role = role.Trim();
+
+        if (string.IsNullOrWhiteSpace(firstName))
+            throw new InvalidOperationException("First name is required.");
+
+        if (string.IsNullOrWhiteSpace(lastName))
+            throw new InvalidOperationException("Last name is required.");
+
+        if (string.IsNullOrWhiteSpace(email))
+            throw new InvalidOperationException("Email is required.");
+
+        if (string.IsNullOrWhiteSpace(phone))
+            throw new InvalidOperationException("Phone is required.");
+
+        if (Members.Any(m => m.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+            throw new InvalidOperationException("A member with this email already exists.");
+
+        int nextMemberId = Members.Count == 0 ? 1 : Members.Max(m => m.MemberId) + 1;
+
+        var newMember = new Member
+        {
+            MemberId = nextMemberId,
+            FirstName = firstName,
+            LastName = lastName,
+            Email = email,
+            Phone = phone,
+            Role = role,
+            IsActive = true
+        };
+
+        Members.Add(newMember);
+        SaveAllData();
+
+        return newMember;
+    }
 }

@@ -58,8 +58,20 @@ public partial class LoginWindow : Window
         }
     }
 
-    private void RegisterText_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    private void RegisterText_MouseLeftButtonUp(object sender, RoutedEventArgs e)
     {
-        // TODO: open registration window
+        var registerWindow = new RegisterMemberWindow(_librarySystem)
+        {
+            Owner = this
+        };
+
+        bool? result = registerWindow.ShowDialog();
+
+        if (result == true && registerWindow.RegisteredMember != null)
+        {
+            MemberIdTextBox.Text = registerWindow.RegisteredMember.MemberId.ToString();
+            MemberIdTextBox.Focus();
+            MemberIdTextBox.SelectAll();
+        }
     }
 }
