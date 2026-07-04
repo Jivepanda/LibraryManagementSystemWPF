@@ -96,14 +96,12 @@
                             Click="SignInButton_Click" />
 
                     <!-- Register link -->
-                    <StackPanel Orientation="Horizontal"
+                    <TextBlock HorizontalAlignment="Center"
                                 HorizontalAlignment="Center"
                                 Margin="0 16 0 0">
                         <TextBlock Text="Don't have a Member ID?"
                                    Foreground="#60637C"
                                    FontSize="12" />
-                        <TextBlock Text="  Register here"
-           Foreground="#362C78"
            FontSize="12"
            FontWeight="SemiBold"
            Cursor="Hand"
