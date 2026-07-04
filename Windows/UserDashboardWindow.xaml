@@ -157,14 +157,16 @@
                         Visibility="Collapsed"
                         Click="CollectReservedBookQuickMenuButton_Click" />
 
-                <Button Content="View Borrowing History"
+                <Button x:Name="ViewBorrowingHistoryButton"
+                        Content="View Borrowing History"
                         Padding="24,12"
                         Margin="0,0,0,0"
                         Background="#362C78"
                         Foreground="White"
                         BorderBrush="#D0D2E0"
                         BorderThickness="1"
-                        Cursor="Hand" />
+                        Cursor="Hand"
+                        Click="ViewBorrowingHistoryButton_Click" />
             </StackPanel>
 
             <!-- Current Borrowed Books header -->
@@ -177,14 +179,14 @@
 
             <!-- Borrowed books / reservations table -->
             <DataGrid x:Name="BorrowedBooksGrid"
-                      AutoGenerateColumns="False"
-                      CanUserAddRows="False"
-                      CanUserDeleteRows="False"
-                      IsReadOnly="True"
-                      HeadersVisibility="Column"
-                      GridLinesVisibility="None"
-                      RowHeight="40"
-                      Margin="0,0,0,0">
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          CanUserDeleteRows="False"
+          IsReadOnly="True"
+          HeadersVisibility="Column"
+          GridLinesVisibility="None"
+          RowHeight="40"
+          Margin="0,0,0,0">
                 <DataGrid.Resources>
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="#362C78" />
@@ -195,16 +197,24 @@
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Title"
-                                        Binding="{Binding Title}"
-                                        Width="*" />
+                            Binding="{Binding Title}"
+                            Width="*" />
 
-                    <DataGridTextColumn Header="Date"
-                                        Binding="{Binding DateString}"
-                                        Width="200" />
+                    <DataGridTextColumn Header="Borrowed"
+                            Binding="{Binding BorrowedDateString}"
+                            Width="140" />
+
+                    <DataGridTextColumn Header="Due"
+                            Binding="{Binding DueDateString}"
+                            Width="140" />
+
+                    <DataGridTextColumn Header="Returned"
+                            Binding="{Binding ReturnedDateString}"
+                            Width="140" />
 
                     <DataGridTextColumn Header="Status"
-                                        Binding="{Binding Status}"
-                                        Width="180">
+                            Binding="{Binding Status}"
+                            Width="160">
                         <DataGridTextColumn.ElementStyle>
                             <Style TargetType="TextBlock">
                                 <Setter Property="HorizontalAlignment" Value="Center" />
@@ -217,6 +227,10 @@
 
                                     <DataTrigger Binding="{Binding Status}" Value="Overdue">
                                         <Setter Property="Foreground" Value="#E53E3E" />
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Status}" Value="Returned">
+                                        <Setter Property="Foreground" Value="#60637C" />
                                     </DataTrigger>
 
                                     <DataTrigger Binding="{Binding Status}" Value="Reserved">

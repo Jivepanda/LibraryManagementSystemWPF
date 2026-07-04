@@ -27,9 +27,13 @@ public partial class UserDashboardWindow : Window
 
         LoadBorrowedBooks();
     }
-
+    private bool _showingBorrowHistory = false;
     private void LoadBorrowedBooks()
     {
+        _showingBorrowHistory = false;
+        BorrowedHeader.Text = "Current Borrowed Books and Reservations";
+        ViewBorrowingHistoryButton.Content = "View Borrowing History";
+
         var items = new List<BorrowedBookViewModel>();
 
         var memberLoans = _librarySystem.Loans
@@ -45,7 +49,9 @@ public partial class UserDashboardWindow : Window
                 BookId = loan.BookId,
                 LoanId = loan.LoanId,
                 Title = book?.Title ?? "Unknown Book",
-                DateString = loan.DueDate.ToString("dd/MM/yyyy"),
+                BorrowedDateString = loan.BorrowDate.ToString("dd/MM/yyyy"),
+                DueDateString = loan.DueDate.ToString("dd/MM/yyyy"),
+                ReturnedDateString = "-",
                 Status = loan.IsOverdue() ? "Overdue" : "Active"
             });
         }
@@ -63,7 +69,9 @@ public partial class UserDashboardWindow : Window
                 BookId = reservation.BookId,
                 ReservationId = reservation.ReservationId,
                 Title = book?.Title ?? "Unknown Book",
-                DateString = reservation.ReserveExpiry.ToString("dd/MM/yyyy"),
+                BorrowedDateString = reservation.ReserveDate.ToString("dd/MM/yyyy"),
+                DueDateString = reservation.ReserveExpiry.ToString("dd/MM/yyyy"),
+                ReturnedDateString = "-",
                 Status = reservation.Status == ReservationStatus.AvailableToCollect
                     ? "Available to Collect"
                     : "Reserved"
@@ -151,7 +159,7 @@ public partial class UserDashboardWindow : Window
                 return;
             }
 
-            var message = $"You wish to return \"{selected.Title}\" due {selected.DateString}.";
+            var message = $"You wish to return \"{selected.Title}\" due {selected.DueDateString}.";
             if (MessageBox.Show(message, "Confirm Return", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
                 return;
 
@@ -174,6 +182,23 @@ public partial class UserDashboardWindow : Window
         }
     }
 
+    private void ViewBorrowingHistoryButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (!_showingBorrowHistory)
+        {
+            BorrowedHeader.Text = "Borrowing History";
+            LoadBorrowHistory();
+            ViewBorrowingHistoryButton.Content = "Return to Active Loans";
+            _showingBorrowHistory = true;
+        }
+        else
+        {
+            BorrowedHeader.Text = "Current Borrowed Books and Reservations";
+            LoadBorrowedBooks();
+            ViewBorrowingHistoryButton.Content = "View Borrowing History";
+            _showingBorrowHistory = false;
+        }
+    }
     private void ReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
     private void HeaderReturnBookButton_Click(object sender, RoutedEventArgs e) => HandleReturnBook();
     private void LogoutButton_Click(object sender, RoutedEventArgs e)
@@ -181,5 +206,48 @@ public partial class UserDashboardWindow : Window
         var loginWindow = new LoginWindow();
         loginWindow.Show();
         this.Close();
+    }
+    private void LoadBorrowHistory()
+    {
+        BorrowedHeader.Text = "Borrowing History";
+
+        var memberLoans = _librarySystem.Loans
+            .Where(l => l.MemberId == _member.MemberId)
+            .OrderByDescending(l => l.BorrowDate)
+            .ToList();
+
+        var items = new List<BorrowedBookViewModel>();
+
+        foreach (var loan in memberLoans)
+        {
+            var book = _librarySystem.Books.FirstOrDefault(b => b.BookId == loan.BookId);
+
+            string status;
+            if (loan.Returned)
+                status = "Returned";
+            else if (loan.IsOverdue())
+                status = "Overdue";
+            else
+                status = "Active";
+
+            items.Add(new BorrowedBookViewModel
+            {
+                LoanId = loan.LoanId,
+                BookId = loan.BookId,
+                Title = book?.Title ?? "Unknown Book",
+                BorrowedDateString = loan.BorrowDate.ToString("dd/MM/yyyy"),
+                DueDateString = loan.DueDate.ToString("dd/MM/yyyy"),
+                ReturnedDateString = loan.ReturnDate?.ToString("dd/MM/yyyy") ?? "-",
+                Status = status
+            });
+        }
+
+        BorrowedBooksGrid.ItemsSource = items;
+        CollectReservedBookQuickMenuButton.Visibility = Visibility.Collapsed;
+    }
+
+    private void ViewCurrentBorrowedBooksButton_Click(object sender, RoutedEventArgs e)
+    {
+        LoadBorrowedBooks();
     }
 }

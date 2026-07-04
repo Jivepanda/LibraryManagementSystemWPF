@@ -132,11 +132,11 @@ public class LibrarySystem
         if (book == null)
             return "Book not found.";
 
-        loan.MarkReturned();
-
         bool returnedToShelf = book.ReturnCopy();
         if (!returnedToShelf)
             return "Book return failed because available copies would exceed total copies.";
+        loan.MarkReturned();
+
 
         var nextReservation = Reservations
             .Where(r => r.BookId == loan.BookId && r.Status == ReservationStatus.Reserved)

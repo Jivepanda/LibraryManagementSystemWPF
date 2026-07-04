@@ -8,10 +8,12 @@ public class Loan
     public DateTime BorrowDate { get; set; }
     public DateTime DueDate { get; set; }
     public bool Returned { get; set; }
+    public DateTime? ReturnDate { get; set; }
 
     public void MarkReturned()
     {
         Returned = true;
+        ReturnDate = DateTime.Now.Date;
     }
 
     public bool IsOverdue()
