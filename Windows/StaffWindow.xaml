@@ -109,5 +109,4 @@
                 </Grid>
             </StackPanel>
         </ScrollViewer>
-    </Grid>
 </Window>
