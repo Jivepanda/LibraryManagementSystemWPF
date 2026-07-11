@@ -37,16 +37,17 @@ public partial class LoginWindow : Window
             return;
         }
 
-        if (!string.Equals(member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
+        if (string.Equals(member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
         {
-            var dashboard = new UserDashboardWindow(member, _librarySystem);
-            dashboard.Show();
+            var staffWindow = new LibraryManagementSystem.Windows.StaffWindow(_librarySystem, member);
+            staffWindow.Show();
             this.Close();
         }
         else
         {
-            MessageBox.Show("This ID belongs to staff. Please use the staff login path.",
-                "Login", MessageBoxButton.OK, MessageBoxImage.Information);
+            var dashboard = new UserDashboardWindow(member, _librarySystem);
+            dashboard.Show();
+            this.Close();
         }
     }
 

@@ -113,8 +113,8 @@
                 Height="32"
                 Background="#6B4FA1"
                 Foreground="White"
-                Click="ReserveBookButton_Click" />
-        </StackPanel>
+                Click="ReserveSelectedButton_Click"/>
+            </StackPanel>
 
         <!-- Results grid -->
         <DataGrid x:Name="SearchResultsGrid"
@@ -126,7 +126,7 @@
           HeadersVisibility="Column"
           GridLinesVisibility="None"
           RowHeight="32"
-          AlternationCount="2">
+          AlternationCount="2" SelectionChanged="SearchResultsGrid_SelectionChanged">
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
                     <!-- Default background -->

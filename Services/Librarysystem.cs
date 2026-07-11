@@ -1,7 +1,7 @@
 ﻿using LibraryManagementSystem.Models;
 
 namespace LibraryManagementSystem.Services;
-
+//
 public class LibrarySystem
 {
     private readonly FileStorageService _storageService;
@@ -120,7 +120,6 @@ public class LibrarySystem
         return $"Book borrowed successfully. Due date: {newLoan.DueDate:dd/MM/yyyy}";
     }
 
-    // FIX 3: ReturnLoan now accepts loanId instead of Loan object.
     // This allows the method to find the loan in the Loans list and update it.
     public string ReturnLoan(int loanId)
     {
@@ -291,7 +290,7 @@ public class LibrarySystem
         private readonly List<Reservation> _reservations;
         private readonly Action _saveAllData;
 
-        // FIX 2: Added List<Loan> so ReserveBook can check active loan counts.
+        // FIX 2:                                                                                                     Added List<Loan> so ReserveBook can check active loan counts.
         public ReservationService(
             List<Book> books,
             List<Member> members,

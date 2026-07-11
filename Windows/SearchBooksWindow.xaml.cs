@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using LibraryManagementSystem.Models;
 using LibraryManagementSystem.Services;
@@ -48,7 +49,27 @@ namespace PlotTwistLibrary
                 return;
             }
 
-            string result = _librarySystem.BorrowBook(_member.MemberId, selectedBook.BookId);
+            int memberIdToBorrowFor = _member.MemberId;
+
+            if (string.Equals(_member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
+            {
+                var borrowWindow = new BorrowForMemberWindow()
+                {
+                    Owner = this
+                };
+
+                bool? dialogResult = borrowWindow.ShowDialog();
+                if (dialogResult == true && borrowWindow.SelectedMemberId.HasValue)
+                {
+                    memberIdToBorrowFor = borrowWindow.SelectedMemberId.Value;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            string result = _librarySystem.BorrowBook(memberIdToBorrowFor, selectedBook.BookId);
 
             MessageBox.Show(result, "Borrow Book",
                 MessageBoxButton.OK, MessageBoxImage.Information);
@@ -57,21 +78,47 @@ namespace PlotTwistLibrary
             SearchResultsGrid.ItemsSource = _librarySystem.SearchBooks(query);
         }
 
-        private void ReserveBookButton_Click(object sender, RoutedEventArgs e)
+        private void ReserveSelectedButton_Click(object sender, RoutedEventArgs e)
         {
-            if (SearchResultsGrid.SelectedItem is not Book selectedBook)
+            var selectedBook = SearchResultsGrid.SelectedItem as Book;
+
+            if (selectedBook == null)
             {
                 MessageBox.Show("Please select a book to reserve.", "Reserve Book",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            var result = _librarySystem.ReservationsManager.ReserveBook(_member.MemberId, selectedBook.BookId);
-            MessageBox.Show(result, "Reserve Book", MessageBoxButton.OK, MessageBoxImage.Information);
+            int memberIdToReserveFor = _member.MemberId;
 
-            RunSearch();
+            if (string.Equals(_member.Role, "Staff", StringComparison.OrdinalIgnoreCase))
+            {
+                var reserveWindow = new BorrowForMemberWindow
+                {
+                    Owner = this
+                };
+
+                bool? dialogResult = reserveWindow.ShowDialog();
+
+                if (dialogResult == true && reserveWindow.SelectedMemberId.HasValue)
+                {
+                    memberIdToReserveFor = reserveWindow.SelectedMemberId.Value;
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            string result = _librarySystem.ReservationsManager
+                .ReserveBook(memberIdToReserveFor, selectedBook.BookId);
+
+            MessageBox.Show(result, "Reserve Book",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+
+            var query = SearchTextBox.Text?.Trim() ?? string.Empty;
+            SearchResultsGrid.ItemsSource = _librarySystem.SearchBooks(query);
         }
-
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             if (Owner != null)
@@ -93,6 +140,11 @@ namespace PlotTwistLibrary
             }
 
             Close();
+        }
+
+        private void SearchResultsGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
