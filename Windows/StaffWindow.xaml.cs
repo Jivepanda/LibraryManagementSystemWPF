@@ -14,7 +14,19 @@ namespace LibraryManagementSystem.Windows
             InitializeComponent();
             _librarySystem = librarySystem;
             _staffMember = staffMember;
+            LoadSummaryCards();
         }
+
+        private void LoadSummaryCards()
+        {
+            TotalBooksTextBlock.Text = _librarySystem.Books
+                .Sum(b => b.TotalCopies).ToString();
+            BorrowedBooksTextBlock.Text = _librarySystem.Loans
+                .Count(l => !l.Returned).ToString();
+            OverdueBooksTextBlock.Text = _librarySystem.Loans
+                .Count(l => l.IsOverdue()).ToString();
+        }
+
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Home clicked.");
@@ -69,5 +81,7 @@ namespace LibraryManagementSystem.Windows
         {
             MessageBox.Show("Add / Edit Books clicked.");
         }
+
+
     }
 }

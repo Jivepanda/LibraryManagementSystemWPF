@@ -60,20 +60,18 @@
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="36,28,36,28">
                 <TextBlock Text="Staff Dashboard"
-                           FontSize="34"
-                           FontWeight="Bold"
-                           Foreground="#241E3E"/>
+                   FontSize="34"
+                   FontWeight="Bold"
+                   Foreground="#241E3E"/>
                 <TextBlock Text="Manage books, loans, and library operations"
-                           FontSize="14"
-                           Foreground="#6F6B78"
-                           Margin="0,4,0,24"/>
-
+                   FontSize="14"
+                   Foreground="#6F6B78"
+                   Margin="0,4,0,24"/>
                 <TextBlock Text="Quick Actions"
-                           FontSize="22"
-                           FontWeight="SemiBold"
-                           Foreground="#241E3E"
-                           Margin="0,0,0,14"/>
-
+                   FontSize="22"
+                   FontWeight="SemiBold"
+                   Foreground="#241E3E"
+                   Margin="0,0,0,14"/>
                 <Grid Margin="0,0,0,24">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -84,29 +82,147 @@
                         <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-
                     <Button Grid.Row="0" Grid.Column="0"
-                            Content="Search Books"
-                            Height="46"
-                            Click="SearchBooksButton_Click"/>
-
+                    Content="Search Books"
+                    Height="46"
+                    Click="SearchBooksButton_Click"/>
                     <Button Grid.Row="0" Grid.Column="2"
-                            Content="View All Borrowed Books"
-                            Height="46"
-                            Click="ViewAllBorrowedBooksButton_Click"/>
-
+                    Content="View All Borrowed Books"
+                    Height="46"
+                    Click="ViewAllBorrowedBooksButton_Click"/>
                     <Button Grid.Row="1" Grid.Column="0"
-                            Content="View Borrowing Users"
-                            Height="46"
-                            Margin="0,12,0,0"
-                            Click="ViewBorrowingUsersButton_Click"/>
-
+                    Content="View Borrowing Users"
+                    Height="46"
+                    Margin="0,12,0,0"
+                    Click="ViewBorrowingUsersButton_Click"/>
                     <Button Grid.Row="1" Grid.Column="2"
-                            Content="Add / Edit Books"
-                            Height="46"
-                            Margin="0,12,0,0"
-                            Click="AddEditBooksButton_Click"/>
+                    Content="Add / Edit Books"
+                    Height="46"
+                    Margin="0,12,0,0"
+                    Click="AddEditBooksButton_Click"/>
+                </Grid>
+
+                <!-- Moved inside the StackPanel so it renders below Quick Actions and scrolls -->
+                <TextBlock Text="Summary"
+                   FontSize="24"
+                   FontWeight="SemiBold"
+                   Foreground="#241E3E"
+                   Margin="0,0,0,14"/>
+                <Grid Margin="0,0,0,28">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0"
+                    Background="White"
+                    CornerRadius="14"
+                    Padding="18"
+                    BorderBrush="#E7E1D8"
+                    BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="14"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Width="44" Height="44"
+                            Background="#F2EEFB"
+                            CornerRadius="10"
+                            VerticalAlignment="Center">
+                                <TextBlock Text="📘"
+                                   FontSize="20"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   Margin="0,8,0,0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                <TextBlock Text="Total Books"
+                                   FontSize="13"
+                                   Foreground="#7A7488"/>
+                                <TextBlock x:Name="TotalBooksTextBlock"
+                                   Text="0"
+                                   FontSize="34"
+                                   FontWeight="Bold"
+                                   Foreground="#4A3E7A"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="2"
+                    Background="White"
+                    CornerRadius="14"
+                    Padding="18"
+                    BorderBrush="#E7E1D8"
+                    BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="14"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Width="44" Height="44"
+                            Background="#FBF3E7"
+                            CornerRadius="10"
+                            VerticalAlignment="Center">
+                                <TextBlock Text="🔖"
+                                   FontSize="18"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   Margin="0,9,0,0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                <TextBlock Text="Borrowed Books"
+                                   FontSize="13"
+                                   Foreground="#7A7488"/>
+                                <TextBlock x:Name="BorrowedBooksTextBlock"
+                                   Text="0"
+                                   FontSize="34"
+                                   FontWeight="Bold"
+                                   Foreground="#C58A22"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="4"
+                    Background="White"
+                    CornerRadius="14"
+                    Padding="18"
+                    BorderBrush="#E7E1D8"
+                    BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="14"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Width="44" Height="44"
+                            Background="#FDEEEE"
+                            CornerRadius="10"
+                            VerticalAlignment="Center">
+                                <TextBlock Text="⚠"
+                                   FontSize="18"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextAlignment="Center"
+                                   Margin="0,9,0,0"/>
+                            </Border>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                <TextBlock Text="Overdue"
+                                   FontSize="13"
+                                   Foreground="#7A7488"/>
+                                <TextBlock x:Name="OverdueBooksTextBlock"
+                                   Text="0"
+                                   FontSize="34"
+                                   FontWeight="Bold"
+                                   Foreground="#C54B4B"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
+    </Grid>
 </Window>
